@@ -24,6 +24,7 @@
 		CEC90FFA250FB3A500A1607F /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FF9250FB3A500A1607F /* MealTableViewCell.swift */; };
 		CEC90FFC250FB3C300A1607F /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FFB250FB3C300A1607F /* MealsViewController.swift */; };
 		CEC90FFE250FB4B100A1607F /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FFD250FB4B100A1607F /* MealViewModel.swift */; };
+		CEC91000250FC86000A1607F /* MealDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FFF250FC86000A1607F /* MealDetailViewController.swift */; };
 		D06DB8F334BC0D9D58C3273A /* Pods_BinkRecipesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9D898D2CC47B34C93DB08F /* Pods_BinkRecipesTests.framework */; };
 		F3B09B655BC9BAB1B8D97920 /* Pods_BinkRecipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926E1E048D5D6286BCBA8C92 /* Pods_BinkRecipes.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		CEC90FF9250FB3A500A1607F /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		CEC90FFB250FB3C300A1607F /* MealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
 		CEC90FFD250FB4B100A1607F /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
+		CEC90FFF250FC86000A1607F /* MealDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			children = (
 				CEC90FBD250F715900A1607F /* CategoriesViewController.swift */,
 				CEC90FFB250FB3C300A1607F /* MealsViewController.swift */,
+				CEC90FFF250FC86000A1607F /* MealDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 			files = (
 				CEC90FED250F72A400A1607F /* Services.swift in Sources */,
 				CEC90FBE250F715900A1607F /* CategoriesViewController.swift in Sources */,
+				CEC91000250FC86000A1607F /* MealDetailViewController.swift in Sources */,
 				CEC90FFE250FB4B100A1607F /* MealViewModel.swift in Sources */,
 				CEC90FBA250F715900A1607F /* AppDelegate.swift in Sources */,
 				CEC90FBC250F715900A1607F /* SceneDelegate.swift in Sources */,

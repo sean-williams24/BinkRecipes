@@ -20,6 +20,12 @@ struct Category: Codable {
     let strCategoryDescription: String
 }
 
+
+// MARK: - MealsDB
+struct MealsDB: Codable {
+    let meals: [Meal]
+}
+
 // MARK: - Meal
 struct Meal: Codable {
     let strMeal: String
@@ -27,10 +33,7 @@ struct Meal: Codable {
     let idMeal: String
 }
 
-// MARK: - MealsDB
-struct MealsDB: Codable {
-    let meals: [Meal]
-}
+
 
 // MARK: - Recipe
 struct Recipe: Codable {

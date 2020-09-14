@@ -21,6 +21,9 @@
 		CEC90FF4250F7B2900A1607F /* MealDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FF3250F7B2900A1607F /* MealDB.swift */; };
 		CEC90FF6250F83B800A1607F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FF5250F83B800A1607F /* CategoryCollectionViewCell.swift */; };
 		CEC90FF8250F978A00A1607F /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FF7250F978A00A1607F /* CategoryViewModel.swift */; };
+		CEC90FFA250FB3A500A1607F /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FF9250FB3A500A1607F /* MealTableViewCell.swift */; };
+		CEC90FFC250FB3C300A1607F /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FFB250FB3C300A1607F /* MealsViewController.swift */; };
+		CEC90FFE250FB4B100A1607F /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FFD250FB4B100A1607F /* MealViewModel.swift */; };
 		D06DB8F334BC0D9D58C3273A /* Pods_BinkRecipesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9D898D2CC47B34C93DB08F /* Pods_BinkRecipesTests.framework */; };
 		F3B09B655BC9BAB1B8D97920 /* Pods_BinkRecipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926E1E048D5D6286BCBA8C92 /* Pods_BinkRecipes.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +74,9 @@
 		CEC90FF3250F7B2900A1607F /* MealDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDB.swift; sourceTree = "<group>"; };
 		CEC90FF5250F83B800A1607F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEC90FF7250F978A00A1607F /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		CEC90FF9250FB3A500A1607F /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
+		CEC90FFB250FB3C300A1607F /* MealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
+		CEC90FFD250FB4B100A1607F /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC90FBD250F715900A1607F /* CategoriesViewController.swift */,
+				CEC90FFB250FB3C300A1607F /* MealsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -203,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC90FF5250F83B800A1607F /* CategoryCollectionViewCell.swift */,
+				CEC90FF9250FB3A500A1607F /* MealTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC90FF7250F978A00A1607F /* CategoryViewModel.swift */,
+				CEC90FFD250FB4B100A1607F /* MealViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -464,10 +473,13 @@
 			files = (
 				CEC90FED250F72A400A1607F /* Services.swift in Sources */,
 				CEC90FBE250F715900A1607F /* CategoriesViewController.swift in Sources */,
+				CEC90FFE250FB4B100A1607F /* MealViewModel.swift in Sources */,
 				CEC90FBA250F715900A1607F /* AppDelegate.swift in Sources */,
 				CEC90FBC250F715900A1607F /* SceneDelegate.swift in Sources */,
 				CEC90FF8250F978A00A1607F /* CategoryViewModel.swift in Sources */,
+				CEC90FFA250FB3A500A1607F /* MealTableViewCell.swift in Sources */,
 				CEC90FF4250F7B2900A1607F /* MealDB.swift in Sources */,
+				CEC90FFC250FB3C300A1607F /* MealsViewController.swift in Sources */,
 				CEC90FF6250F83B800A1607F /* CategoryCollectionViewCell.swift in Sources */,
 				CEC90FC4250F715900A1607F /* BinkRecipes.xcdatamodeld in Sources */,
 			);

@@ -49,4 +49,23 @@ class Services {
             }
         }.resume()
     }
+    
+    
+    func fetchMealsFor(category: String, completion: @escaping([MealViewModel], Error?)->()) {
+        let url = URL(string: Endpoints.categoryFilter.stringValue + category)!
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {
+                completion([], error)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            if let mealDB = try? decoder.decode(MealsDB.self, from: data) {
+                
+                let mealViewModels = mealDB.meals.map({MealViewModel(meal: $0)})
+                completion(mealViewModels, nil)
+            }
+        }.resume()
+    }
 }

@@ -36,11 +36,15 @@ class ViewController: UIViewController {
         
         
         URLSession.shared.dataTask(with: Endpoints.listAllCategories.url) { (data, response, error) in
-            guard data == data else {
+            guard let data = data else {
                 print(error?.localizedDescription as Any)
                 return
             }
             
+            let decoder = JSONDecoder()
+            if let mealDB = try? decoder.decode(MealDB.self, from: data) {
+                print(mealDB.categories)
+            }
             
             
         }.resume()

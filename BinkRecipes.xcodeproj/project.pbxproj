@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEC90FBA250F715900A1607F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FB9250F715900A1607F /* AppDelegate.swift */; };
+		CEC90FBC250F715900A1607F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FBB250F715900A1607F /* SceneDelegate.swift */; };
+		CEC90FBE250F715900A1607F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FBD250F715900A1607F /* ViewController.swift */; };
+		CEC90FC1250F715900A1607F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC90FBF250F715900A1607F /* Main.storyboard */; };
+		CEC90FC4250F715900A1607F /* BinkRecipes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FC2250F715900A1607F /* BinkRecipes.xcdatamodeld */; };
+		CEC90FC6250F715C00A1607F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC90FC5250F715C00A1607F /* Assets.xcassets */; };
+		CEC90FC9250F715C00A1607F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC90FC7250F715C00A1607F /* LaunchScreen.storyboard */; };
+		CEC90FD4250F715C00A1607F /* BinkRecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FD3250F715C00A1607F /* BinkRecipesTests.swift */; };
+		CEC90FDF250F715C00A1607F /* BinkRecipesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FDE250F715C00A1607F /* BinkRecipesUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEC90FD0250F715C00A1607F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEC90FAE250F715900A1607F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEC90FB5250F715900A1607F;
+			remoteInfo = BinkRecipes;
+		};
+		CEC90FDB250F715C00A1607F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEC90FAE250F715900A1607F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEC90FB5250F715900A1607F;
+			remoteInfo = BinkRecipes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CEC90FB6250F715900A1607F /* BinkRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BinkRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC90FB9250F715900A1607F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEC90FBB250F715900A1607F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CEC90FBD250F715900A1607F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEC90FC0250F715900A1607F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEC90FC3250F715900A1607F /* BinkRecipes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BinkRecipes.xcdatamodel; sourceTree = "<group>"; };
+		CEC90FC5250F715C00A1607F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEC90FC8250F715C00A1607F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CEC90FCA250F715C00A1607F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEC90FCF250F715C00A1607F /* BinkRecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinkRecipesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC90FD3250F715C00A1607F /* BinkRecipesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinkRecipesTests.swift; sourceTree = "<group>"; };
+		CEC90FD5250F715C00A1607F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEC90FDA250F715C00A1607F /* BinkRecipesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinkRecipesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC90FDE250F715C00A1607F /* BinkRecipesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinkRecipesUITests.swift; sourceTree = "<group>"; };
+		CEC90FE0250F715C00A1607F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEC90FB3250F715900A1607F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC90FCC250F715C00A1607F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC90FD7250F715C00A1607F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEC90FAD250F715900A1607F = {
+			isa = PBXGroup;
+			children = (
+				CEC90FB8250F715900A1607F /* BinkRecipes */,
+				CEC90FD2250F715C00A1607F /* BinkRecipesTests */,
+				CEC90FDD250F715C00A1607F /* BinkRecipesUITests */,
+				CEC90FB7250F715900A1607F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEC90FB7250F715900A1607F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEC90FB6250F715900A1607F /* BinkRecipes.app */,
+				CEC90FCF250F715C00A1607F /* BinkRecipesTests.xctest */,
+				CEC90FDA250F715C00A1607F /* BinkRecipesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEC90FB8250F715900A1607F /* BinkRecipes */ = {
+			isa = PBXGroup;
+			children = (
+				CEC90FB9250F715900A1607F /* AppDelegate.swift */,
+				CEC90FBB250F715900A1607F /* SceneDelegate.swift */,
+				CEC90FBD250F715900A1607F /* ViewController.swift */,
+				CEC90FBF250F715900A1607F /* Main.storyboard */,
+				CEC90FC5250F715C00A1607F /* Assets.xcassets */,
+				CEC90FC7250F715C00A1607F /* LaunchScreen.storyboard */,
+				CEC90FCA250F715C00A1607F /* Info.plist */,
+				CEC90FC2250F715900A1607F /* BinkRecipes.xcdatamodeld */,
+			);
+			path = BinkRecipes;
+			sourceTree = "<group>";
+		};
+		CEC90FD2250F715C00A1607F /* BinkRecipesTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEC90FD3250F715C00A1607F /* BinkRecipesTests.swift */,
+				CEC90FD5250F715C00A1607F /* Info.plist */,
+			);
+			path = BinkRecipesTests;
+			sourceTree = "<group>";
+		};
+		CEC90FDD250F715C00A1607F /* BinkRecipesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CEC90FDE250F715C00A1607F /* BinkRecipesUITests.swift */,
+				CEC90FE0250F715C00A1607F /* Info.plist */,
+			);
+			path = BinkRecipesUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEC90FB5250F715900A1607F /* BinkRecipes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEC90FE3250F715C00A1607F /* Build configuration list for PBXNativeTarget "BinkRecipes" */;
+			buildPhases = (
+				CEC90FB2250F715900A1607F /* Sources */,
+				CEC90FB3250F715900A1607F /* Frameworks */,
+				CEC90FB4250F715900A1607F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BinkRecipes;
+			productName = BinkRecipes;
+			productReference = CEC90FB6250F715900A1607F /* BinkRecipes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEC90FCE250F715C00A1607F /* BinkRecipesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEC90FE6250F715C00A1607F /* Build configuration list for PBXNativeTarget "BinkRecipesTests" */;
+			buildPhases = (
+				CEC90FCB250F715C00A1607F /* Sources */,
+				CEC90FCC250F715C00A1607F /* Frameworks */,
+				CEC90FCD250F715C00A1607F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEC90FD1250F715C00A1607F /* PBXTargetDependency */,
+			);
+			name = BinkRecipesTests;
+			productName = BinkRecipesTests;
+			productReference = CEC90FCF250F715C00A1607F /* BinkRecipesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CEC90FD9250F715C00A1607F /* BinkRecipesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEC90FE9250F715C00A1607F /* Build configuration list for PBXNativeTarget "BinkRecipesUITests" */;
+			buildPhases = (
+				CEC90FD6250F715C00A1607F /* Sources */,
+				CEC90FD7250F715C00A1607F /* Frameworks */,
+				CEC90FD8250F715C00A1607F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEC90FDC250F715C00A1607F /* PBXTargetDependency */,
+			);
+			name = BinkRecipesUITests;
+			productName = BinkRecipesUITests;
+			productReference = CEC90FDA250F715C00A1607F /* BinkRecipesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEC90FAE250F715900A1607F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Sean Williams";
+				TargetAttributes = {
+					CEC90FB5250F715900A1607F = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					CEC90FCE250F715C00A1607F = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = CEC90FB5250F715900A1607F;
+					};
+					CEC90FD9250F715C00A1607F = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = CEC90FB5250F715900A1607F;
+					};
+				};
+			};
+			buildConfigurationList = CEC90FB1250F715900A1607F /* Build configuration list for PBXProject "BinkRecipes" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEC90FAD250F715900A1607F;
+			productRefGroup = CEC90FB7250F715900A1607F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEC90FB5250F715900A1607F /* BinkRecipes */,
+				CEC90FCE250F715C00A1607F /* BinkRecipesTests */,
+				CEC90FD9250F715C00A1607F /* BinkRecipesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEC90FB4250F715900A1607F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEC90FC9250F715C00A1607F /* LaunchScreen.storyboard in Resources */,
+				CEC90FC6250F715C00A1607F /* Assets.xcassets in Resources */,
+				CEC90FC1250F715900A1607F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC90FCD250F715C00A1607F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC90FD8250F715C00A1607F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEC90FB2250F715900A1607F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEC90FBE250F715900A1607F /* ViewController.swift in Sources */,
+				CEC90FBA250F715900A1607F /* AppDelegate.swift in Sources */,
+				CEC90FBC250F715900A1607F /* SceneDelegate.swift in Sources */,
+				CEC90FC4250F715900A1607F /* BinkRecipes.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC90FCB250F715C00A1607F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEC90FD4250F715C00A1607F /* BinkRecipesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC90FD6250F715C00A1607F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEC90FDF250F715C00A1607F /* BinkRecipesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEC90FD1250F715C00A1607F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEC90FB5250F715900A1607F /* BinkRecipes */;
+			targetProxy = CEC90FD0250F715C00A1607F /* PBXContainerItemProxy */;
+		};
+		CEC90FDC250F715C00A1607F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEC90FB5250F715900A1607F /* BinkRecipes */;
+			targetProxy = CEC90FDB250F715C00A1607F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CEC90FBF250F715900A1607F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEC90FC0250F715900A1607F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CEC90FC7250F715C00A1607F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEC90FC8250F715C00A1607F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEC90FE1250F715C00A1607F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEC90FE2250F715C00A1607F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEC90FE4250F715C00A1607F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = BinkRecipes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.BinkRecipes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEC90FE5250F715C00A1607F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = BinkRecipes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.BinkRecipes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEC90FE7250F715C00A1607F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = BinkRecipesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.BinkRecipesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BinkRecipes.app/BinkRecipes";
+			};
+			name = Debug;
+		};
+		CEC90FE8250F715C00A1607F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = BinkRecipesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.BinkRecipesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BinkRecipes.app/BinkRecipes";
+			};
+			name = Release;
+		};
+		CEC90FEA250F715C00A1607F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = BinkRecipesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.BinkRecipesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BinkRecipes;
+			};
+			name = Debug;
+		};
+		CEC90FEB250F715C00A1607F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4729AK8V;
+				INFOPLIST_FILE = BinkRecipesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.BinkRecipesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BinkRecipes;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEC90FB1250F715900A1607F /* Build configuration list for PBXProject "BinkRecipes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEC90FE1250F715C00A1607F /* Debug */,
+				CEC90FE2250F715C00A1607F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEC90FE3250F715C00A1607F /* Build configuration list for PBXNativeTarget "BinkRecipes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEC90FE4250F715C00A1607F /* Debug */,
+				CEC90FE5250F715C00A1607F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEC90FE6250F715C00A1607F /* Build configuration list for PBXNativeTarget "BinkRecipesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEC90FE7250F715C00A1607F /* Debug */,
+				CEC90FE8250F715C00A1607F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEC90FE9250F715C00A1607F /* Build configuration list for PBXNativeTarget "BinkRecipesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEC90FEA250F715C00A1607F /* Debug */,
+				CEC90FEB250F715C00A1607F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEC90FC2250F715900A1607F /* BinkRecipes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEC90FC3250F715900A1607F /* BinkRecipes.xcdatamodel */,
+			);
+			currentVersion = CEC90FC3250F715900A1607F /* BinkRecipes.xcdatamodel */;
+			path = BinkRecipes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CEC90FAE250F715900A1607F /* Project object */;
+}

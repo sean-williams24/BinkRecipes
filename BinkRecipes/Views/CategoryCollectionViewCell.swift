@@ -14,16 +14,15 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textLabel: UILabel!
     
-    var category: Category! {
+    var viewModel: CategoryViewModel! {
         didSet {
-            textLabel.text = category.strCategory.uppercased()
-            imageView.sd_setImage(with: URL(string: category.strCategoryThumb), placeholderImage: UIImage(named: "bink"))
+            textLabel.attributedText = viewModel.title
+            imageView.sd_setImage(with: URL(string: viewModel.imageURLString), placeholderImage: UIImage(named: "bink"))
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        letterSpacing(label: textLabel, value: 5.0)
         
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 0.6
@@ -31,9 +30,5 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func letterSpacing(label: UILabel, value: Double) {
-        let attributedString = NSMutableAttributedString(string: label.text!)
-        attributedString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(value), range: NSRange(location: 0, length: attributedString.length))
-        label.attributedText = attributedString
-    }
+
 }

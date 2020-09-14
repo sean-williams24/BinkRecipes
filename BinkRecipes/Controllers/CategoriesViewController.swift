@@ -16,11 +16,10 @@ class CategoriesViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleHeightConstraint: NSLayoutConstraint!
     
-
     
     // MARK: - Properties
     
-    var categories = [Category]()
+    var categoryViewModels = [CategoryViewModel]()
     let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
     let itemsPerRow: CGFloat = 2.0
     
@@ -60,7 +59,10 @@ class CategoriesViewController: UIViewController {
             let decoder = JSONDecoder()
             if let mealDB = try? decoder.decode(MealDB.self, from: data) {
                 
-                self.categories = mealDB.categories.sorted {$0.strCategory < $1.strCategory}
+                let categories = mealDB.categories.sorted {$0.strCategory < $1.strCategory}
+                
+                self.categoryViewModels = categories.map({CategoryViewModel(category: $0)})
+                
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -74,16 +76,18 @@ class CategoriesViewController: UIViewController {
 }
 
 
+// MARK: - Extensions
+
 extension CategoriesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        categories.count
+        categoryViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! CategoryCollectionViewCell
-        let category = categories[indexPath.row]
-        cell.category = category
+        let category = categoryViewModels[indexPath.row]
+        cell.viewModel = category
         
         return cell
         

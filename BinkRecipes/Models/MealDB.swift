@@ -11,7 +11,6 @@ import Foundation
 // MARK: - MealDB
 struct MealDB: Codable {
     let categories: [Category]
-    let meals: [Meal]
 }
 
 // MARK: - Category
@@ -26,6 +25,11 @@ struct Meal: Codable {
     let strMeal: String
     let strMealThumb: String
     let idMeal: String
+}
+
+// MARK: - MealsDB
+struct MealsDB: Codable {
+    let meals: [Meal]
 }
 
 // MARK: - Recipe

@@ -17,18 +17,37 @@ class MealsViewController: UIViewController {
     
     // MARK: - Properties
     
-
+    var category: String!
+    var mealViewModels = [MealViewModel]()
+    
     
     // MARK: - Life Cylce
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let services = Services()
+        services.fetchMealsFor(category: category) { meals, error in
+            guard error == nil else {
+                print(error?.localizedDescription as Any)
+                return
+            }
+            
+            self.mealViewModels = meals
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                
+            }
+        }
+        
     }
     
-
-
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
 
 
@@ -37,11 +56,14 @@ class MealsViewController: UIViewController {
 extension MealsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        mealViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mealCell", for: indexPath) as! MealTableViewCell
+        cell.viewModel = mealViewModels[indexPath.row]
+        
+        return cell
     }
     
     

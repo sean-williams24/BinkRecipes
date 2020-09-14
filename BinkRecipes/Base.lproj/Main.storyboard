@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Categories View Controller-->
+        <!-- - -->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CategoriesViewController" customModule="BinkRecipes" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,11 +90,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ujG-SP-xfX"/>
+                    <navigationItem key="navigationItem" title="-" id="ujG-SP-xfX"/>
                     <connections>
                         <outlet property="collectionView" destination="Jyz-kn-uko" id="deN-SF-D7o"/>
                         <outlet property="titleHeightConstraint" destination="6CE-VA-1cb" id="cJL-Fc-ErB"/>
-                        <segue destination="HXw-Gv-8a4" kind="show" id="Bbv-Bm-i4H"/>
+                        <segue destination="HXw-Gv-8a4" kind="show" identifier="showMeals" id="Bbv-Bm-i4H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -110,21 +110,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qKD-iz-yEk">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="5" y="88" width="409" height="774"/>
+                                <color key="separatorColor" red="0.67526610659999997" green="0.2331447005" blue="0.60787641999999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mealCell" rowHeight="199" id="zc0-Jo-S35" customClass="MealTableViewCell" customModule="BinkRecipes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="199"/>
+                                        <rect key="frame" x="0.0" y="28" width="409" height="199"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zc0-Jo-S35" id="z5r-CL-jSF">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="409" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pqD-vB-Xi2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
+                                                    <rect key="frame" x="0.0" y="5" width="409" height="154"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="160" id="Hks-Nb-5BK"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3A-WQ-mh8">
-                                                    <rect key="frame" x="10" y="167" width="394" height="32"/>
+                                                    <rect key="frame" x="10" y="159" width="389" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="MDO-6B-lAE"/>
                                                     </constraints>
@@ -135,12 +138,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="pqD-vB-Xi2" secondAttribute="trailing" id="1bq-qg-te6"/>
-                                                <constraint firstItem="pqD-vB-Xi2" firstAttribute="top" secondItem="z5r-CL-jSF" secondAttribute="top" id="339-VZ-qUk"/>
+                                                <constraint firstItem="pqD-vB-Xi2" firstAttribute="top" secondItem="z5r-CL-jSF" secondAttribute="top" constant="5" id="339-VZ-qUk"/>
                                                 <constraint firstItem="C3A-WQ-mh8" firstAttribute="leading" secondItem="z5r-CL-jSF" secondAttribute="leading" constant="10" id="Dfi-3V-2K0"/>
-                                                <constraint firstItem="C3A-WQ-mh8" firstAttribute="top" secondItem="pqD-vB-Xi2" secondAttribute="bottom" constant="8" id="ZGM-SQ-cH2"/>
+                                                <constraint firstItem="C3A-WQ-mh8" firstAttribute="top" secondItem="pqD-vB-Xi2" secondAttribute="bottom" id="ZGM-SQ-cH2"/>
                                                 <constraint firstAttribute="trailing" secondItem="C3A-WQ-mh8" secondAttribute="trailing" constant="10" id="fag-UM-OM4"/>
                                                 <constraint firstItem="pqD-vB-Xi2" firstAttribute="leading" secondItem="z5r-CL-jSF" secondAttribute="leading" id="hfP-kv-FLS"/>
-                                                <constraint firstAttribute="bottom" secondItem="C3A-WQ-mh8" secondAttribute="bottom" id="qZf-X3-uR1"/>
+                                                <constraint firstAttribute="bottom" secondItem="C3A-WQ-mh8" secondAttribute="bottom" constant="8" id="qZf-X3-uR1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -160,7 +163,7 @@
                             <constraint firstItem="LKD-m9-LxM" firstAttribute="trailing" secondItem="qKD-iz-yEk" secondAttribute="trailing" id="RiQ-sd-1Gp"/>
                             <constraint firstItem="qKD-iz-yEk" firstAttribute="top" secondItem="LKD-m9-LxM" secondAttribute="top" id="bUf-bL-Fc2"/>
                             <constraint firstItem="LKD-m9-LxM" firstAttribute="bottom" secondItem="qKD-iz-yEk" secondAttribute="bottom" id="d2P-lC-X2j"/>
-                            <constraint firstItem="qKD-iz-yEk" firstAttribute="leading" secondItem="LKD-m9-LxM" secondAttribute="leading" id="gYQ-8P-bhm"/>
+                            <constraint firstItem="qKD-iz-yEk" firstAttribute="leading" secondItem="LKD-m9-LxM" secondAttribute="leading" constant="5" id="gYQ-8P-bhm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LKD-m9-LxM"/>
                     </view>
@@ -181,6 +184,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nrk-OA-eca">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

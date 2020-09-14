@@ -22,12 +22,14 @@ class CategoriesViewController: UIViewController {
     var categoryViewModels = [CategoryViewModel]()
     let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
     let itemsPerRow: CGFloat = 2.0
+    var category: String!
+    
     
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         let services = Services()
         services.fetchCategories { categories, error in
             guard error == nil else {
@@ -41,6 +43,20 @@ class CategoriesViewController: UIViewController {
                  self.collectionView.reloadData()
              }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! MealsViewController
+        vc.category = category
     }
 
 }
@@ -60,7 +76,12 @@ extension CategoriesViewController: UICollectionViewDataSource, UICollectionView
         cell.viewModel = category
         
         return cell
-        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let attrCategory = categoryViewModels[indexPath.row].title
+        category = attrCategory.string
+        performSegue(withIdentifier: "showMeals", sender: self)
     }
 }
 

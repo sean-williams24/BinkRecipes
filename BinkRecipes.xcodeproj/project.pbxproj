@@ -25,6 +25,7 @@
 		CEC90FFC250FB3C300A1607F /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FFB250FB3C300A1607F /* MealsViewController.swift */; };
 		CEC90FFE250FB4B100A1607F /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FFD250FB4B100A1607F /* MealViewModel.swift */; };
 		CEC91000250FC86000A1607F /* MealDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FFF250FC86000A1607F /* MealDetailViewController.swift */; };
+		CEC91002250FCBF200A1607F /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC91001250FCBF200A1607F /* RecipeViewModel.swift */; };
 		D06DB8F334BC0D9D58C3273A /* Pods_BinkRecipesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9D898D2CC47B34C93DB08F /* Pods_BinkRecipesTests.framework */; };
 		F3B09B655BC9BAB1B8D97920 /* Pods_BinkRecipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926E1E048D5D6286BCBA8C92 /* Pods_BinkRecipes.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		CEC90FFB250FB3C300A1607F /* MealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
 		CEC90FFD250FB4B100A1607F /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
 		CEC90FFF250FC86000A1607F /* MealDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewController.swift; sourceTree = "<group>"; };
+		CEC91001250FCBF200A1607F /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 			children = (
 				CEC90FF7250F978A00A1607F /* CategoryViewModel.swift */,
 				CEC90FFD250FB4B100A1607F /* MealViewModel.swift */,
+				CEC91001250FCBF200A1607F /* RecipeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				CEC90FFC250FB3C300A1607F /* MealsViewController.swift in Sources */,
 				CEC90FF6250F83B800A1607F /* CategoryCollectionViewCell.swift in Sources */,
 				CEC90FC4250F715900A1607F /* BinkRecipes.xcdatamodeld in Sources */,
+				CEC91002250FCBF200A1607F /* RecipeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

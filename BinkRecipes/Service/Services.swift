@@ -70,21 +70,32 @@ class Services {
     }
     
     
-//    func fetchMealsFor(category: String, completion: @escaping([MealViewModel], Error?)->()) {
-//        let url = URL(string: Endpoints.categoryFilter.stringValue + category)!
-//        
-//        URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            guard let data = data else {
-//                completion([], error)
-//                return
+    func fetchMealDetailsFor(id: String, completion: @escaping(RecipeViewModel?, Error?)->()) {
+        let url = URL(string: Endpoints.recipeDetails.stringValue + id)!
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {
+                completion(nil, error)
+                return
+            }
+            
+//            do {
+//                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+//                    print(json)
+//
+//                }
+//            } catch {
+//                print(error.localizedDescription)
 //            }
-//            
-//            let decoder = JSONDecoder()
-//            if let mealDB = try? decoder.decode(MealsDB.self, from: data) {
-//                
-//                let mealViewModels = mealDB.meals.map({MealViewModel(meal: $0)})
-//                completion(mealViewModels, nil)
-//            }
-//        }.resume()
-//    }
+            
+            
+            let decoder = JSONDecoder()
+            if let recipes = try? decoder.decode(Recipes.self, from: data) {
+                if let recipe = recipes.meals.first {
+                    let recipeViewModel = RecipeViewModel(recipe: recipe)
+                    completion(recipeViewModel, nil)
+                }
+            }
+        }.resume()
+    }
 }

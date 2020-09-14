@@ -19,7 +19,7 @@ class MealsViewController: UIViewController {
     
     var category: String!
     var mealViewModels = [MealViewModel]()
-    
+    var id: String!
     
     // MARK: - Life Cylce
     
@@ -48,6 +48,14 @@ class MealsViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! MealDetailViewController
+        vc.id = id
+    }
+
 }
 
 
@@ -64,6 +72,11 @@ extension MealsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.viewModel = mealViewModels[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        id = mealViewModels[indexPath.row].id
+        performSegue(withIdentifier: "showDetail", sender: self)
     }
     
     

@@ -16,13 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bink Recipes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sf0-aI-WiU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BINK RECIPES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sf0-aI-WiU">
                                 <rect key="frame" x="20" y="44" width="374" height="150"/>
-                                <color key="backgroundColor" red="0.67526610659999997" green="0.2331447005" blue="0.60787641999999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="6CE-VA-1cb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -44,11 +43,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-jv-o9Q">
-                                                    <rect key="frame" x="0.0" y="0.0" width="208" height="208"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="208" height="176"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xA-Oh-WFV">
-                                                    <rect key="frame" x="10" y="94" width="188" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="10" y="179" width="188" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="Eid-st-TOm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -57,9 +59,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="9xA-Oh-WFV" secondAttribute="trailing" constant="10" id="EHv-OF-Znq"/>
                                                 <constraint firstItem="yTU-jv-o9Q" firstAttribute="leading" secondItem="ViU-Lm-exQ" secondAttribute="leading" id="GOU-zb-pla"/>
                                                 <constraint firstAttribute="trailing" secondItem="yTU-jv-o9Q" secondAttribute="trailing" id="baD-Tg-xzb"/>
-                                                <constraint firstItem="9xA-Oh-WFV" firstAttribute="centerY" secondItem="ViU-Lm-exQ" secondAttribute="centerY" id="hc3-uN-D7d"/>
-                                                <constraint firstAttribute="bottom" secondItem="yTU-jv-o9Q" secondAttribute="bottom" id="ldl-9D-Ilr"/>
+                                                <constraint firstItem="9xA-Oh-WFV" firstAttribute="top" secondItem="yTU-jv-o9Q" secondAttribute="bottom" constant="3" id="ldl-9D-Ilr"/>
                                                 <constraint firstItem="yTU-jv-o9Q" firstAttribute="top" secondItem="ViU-Lm-exQ" secondAttribute="top" id="oPj-vW-gZC"/>
+                                                <constraint firstAttribute="bottom" secondItem="9xA-Oh-WFV" secondAttribute="bottom" constant="8.5" id="qva-ha-bYg"/>
                                                 <constraint firstItem="9xA-Oh-WFV" firstAttribute="leading" secondItem="ViU-Lm-exQ" secondAttribute="leading" constant="10" id="xAZ-wx-weq"/>
                                             </constraints>
                                         </collectionViewCellContentView>

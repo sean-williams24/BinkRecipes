@@ -19,16 +19,16 @@ class BinkRecipesTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCategoryViewModel() {
+        let category = Category(idCategory: "", strCategory: "BEEF", strCategoryThumb: "www.images.com/beef", strCategoryDescription: "")
+        let categoryViewModel = CategoryViewModel(category: category)
+        let attrCategory = NSMutableAttributedString(string: category.strCategory)
+        attrCategory.addAttribute(NSAttributedString.Key.kern, value: CGFloat(5.0), range: NSRange(location: 0, length: attrCategory.length))
+        
+        XCTAssertEqual(attrCategory, categoryViewModel.title)
+        XCTAssertEqual(category.strCategoryThumb, "www.images.com/beef")
+        
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 
 }

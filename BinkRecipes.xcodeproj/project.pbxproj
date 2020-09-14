@@ -152,11 +152,11 @@
 				CEC90FB9250F715900A1607F /* AppDelegate.swift */,
 				CEC90FBB250F715900A1607F /* SceneDelegate.swift */,
 				CEC90FC2250F715900A1607F /* BinkRecipes.xcdatamodeld */,
-				CEC90FF1250F72DF00A1607F /* Models */,
-				CEC90FF2250F733100A1607F /* ViewModels */,
-				CEC90FF0250F72CB00A1607F /* Views */,
-				CEC90FEF250F72B500A1607F /* Controllers */,
-				CEC90FEE250F72AB00A1607F /* Networking */,
+				CEC90FF2250F733100A1607F /* ViewModel */,
+				CEC90FF1250F72DF00A1607F /* Model */,
+				CEC90FF0250F72CB00A1607F /* View */,
+				CEC90FEF250F72B500A1607F /* Controller */,
+				CEC90FEE250F72AB00A1607F /* Service */,
 				CEC90FCA250F715C00A1607F /* Info.plist */,
 				CEC90FC7250F715C00A1607F /* LaunchScreen.storyboard */,
 				CEC90FBF250F715900A1607F /* Main.storyboard */,
@@ -183,44 +183,44 @@
 			path = BinkRecipesUITests;
 			sourceTree = "<group>";
 		};
-		CEC90FEE250F72AB00A1607F /* Networking */ = {
+		CEC90FEE250F72AB00A1607F /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				CEC90FEC250F72A400A1607F /* Services.swift */,
 			);
-			path = Networking;
+			path = Service;
 			sourceTree = "<group>";
 		};
-		CEC90FEF250F72B500A1607F /* Controllers */ = {
+		CEC90FEF250F72B500A1607F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				CEC90FBD250F715900A1607F /* CategoriesViewController.swift */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		CEC90FF0250F72CB00A1607F /* Views */ = {
+		CEC90FF0250F72CB00A1607F /* View */ = {
 			isa = PBXGroup;
 			children = (
 				CEC90FF5250F83B800A1607F /* CategoryCollectionViewCell.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		CEC90FF1250F72DF00A1607F /* Models */ = {
+		CEC90FF1250F72DF00A1607F /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				CEC90FF3250F7B2900A1607F /* MealDB.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		CEC90FF2250F733100A1607F /* ViewModels */ = {
+		CEC90FF2250F733100A1607F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				CEC90FF7250F978A00A1607F /* CategoryViewModel.swift */,
 			);
-			path = ViewModels;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

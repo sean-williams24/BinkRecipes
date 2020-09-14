@@ -47,6 +47,7 @@ class CategoriesViewController: UIViewController {
             var url: URL {
                 return URL(string: stringValue)!
             }
+            
         }
         
         

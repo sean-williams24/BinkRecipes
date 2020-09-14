@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CEC90FBA250F715900A1607F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FB9250F715900A1607F /* AppDelegate.swift */; };
 		CEC90FBC250F715900A1607F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FBB250F715900A1607F /* SceneDelegate.swift */; };
-		CEC90FBE250F715900A1607F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FBD250F715900A1607F /* ViewController.swift */; };
+		CEC90FBE250F715900A1607F /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FBD250F715900A1607F /* CategoriesViewController.swift */; };
 		CEC90FC1250F715900A1607F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC90FBF250F715900A1607F /* Main.storyboard */; };
 		CEC90FC4250F715900A1607F /* BinkRecipes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FC2250F715900A1607F /* BinkRecipes.xcdatamodeld */; };
 		CEC90FC6250F715C00A1607F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC90FC5250F715C00A1607F /* Assets.xcassets */; };
@@ -18,6 +18,7 @@
 		CEC90FDF250F715C00A1607F /* BinkRecipesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FDE250F715C00A1607F /* BinkRecipesUITests.swift */; };
 		CEC90FED250F72A400A1607F /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FEC250F72A400A1607F /* Services.swift */; };
 		CEC90FF4250F7B2900A1607F /* MealDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FF3250F7B2900A1607F /* MealDB.swift */; };
+		CEC90FF6250F83B800A1607F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FF5250F83B800A1607F /* CategoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,7 @@
 		CEC90FB6250F715900A1607F /* BinkRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BinkRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC90FB9250F715900A1607F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC90FBB250F715900A1607F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEC90FBD250F715900A1607F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEC90FBD250F715900A1607F /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		CEC90FC0250F715900A1607F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEC90FC3250F715900A1607F /* BinkRecipes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BinkRecipes.xcdatamodel; sourceTree = "<group>"; };
 		CEC90FC5250F715C00A1607F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		CEC90FE0250F715C00A1607F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC90FEC250F72A400A1607F /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		CEC90FF3250F7B2900A1607F /* MealDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDB.swift; sourceTree = "<group>"; };
+		CEC90FF5250F83B800A1607F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +152,7 @@
 		CEC90FEF250F72B500A1607F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CEC90FBD250F715900A1607F /* ViewController.swift */,
+				CEC90FBD250F715900A1607F /* CategoriesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,6 +160,7 @@
 		CEC90FF0250F72CB00A1607F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEC90FF5250F83B800A1607F /* CategoryCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,10 +312,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC90FED250F72A400A1607F /* Services.swift in Sources */,
-				CEC90FBE250F715900A1607F /* ViewController.swift in Sources */,
+				CEC90FBE250F715900A1607F /* CategoriesViewController.swift in Sources */,
 				CEC90FBA250F715900A1607F /* AppDelegate.swift in Sources */,
 				CEC90FBC250F715900A1607F /* SceneDelegate.swift in Sources */,
 				CEC90FF4250F7B2900A1607F /* MealDB.swift in Sources */,
+				CEC90FF6250F83B800A1607F /* CategoryCollectionViewCell.swift in Sources */,
 				CEC90FC4250F715900A1607F /* BinkRecipes.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

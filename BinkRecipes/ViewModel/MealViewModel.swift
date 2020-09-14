@@ -12,9 +12,12 @@ struct MealViewModel {
     
     public let mealTitle: String
     public let imageURLString: String
+    public let id: String
     
     public init (meal: Meal) {
         self.mealTitle = meal.strMeal
         self.imageURLString = meal.strMealThumb
+        self.id = meal.idMeal
+
     }
 }

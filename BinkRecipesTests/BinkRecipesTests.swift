@@ -27,8 +27,16 @@ class BinkRecipesTests: XCTestCase {
         
         XCTAssertEqual(attrCategory, categoryViewModel.title)
         XCTAssertEqual(category.strCategoryThumb, "www.images.com/beef")
-        
     }
 
 
+    func testMealViewModel() {
+        let meal = Meal(strMeal: "Enchilladas", strMealThumb: "www.images.com/mexican", idMeal: "52940")
+        let mealViewModel = MealViewModel(meal: meal)
+        
+        XCTAssertEqual(meal.strMeal, mealViewModel.mealTitle)
+        XCTAssertEqual(meal.strMealThumb, mealViewModel.imageURLString)
+        XCTAssertEqual(meal.idMeal, mealViewModel.id)
+        XCTAssertEqual(meal.idMeal.count, 5)
+    }
 }

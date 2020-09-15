@@ -6,6 +6,7 @@
 //  Copyright © 2020 Sean Williams. All rights reserved.
 //
 
+import CoreData
 import UIKit
 import YoutubePlayer_in_WKWebView
 
@@ -22,12 +23,12 @@ class MealDetailViewController: UIViewController {
     @IBOutlet weak var youTubeView: WKYTPlayerView!
     
     
-    
     // MARK: - Properties
     
     var id: String!
     let titleMinHeight: CGFloat = 0.0
     var titleViewMaxHeight: CGFloat = 300
+    var connection = true
     
     // MARK: - Life Cycle
     
@@ -36,6 +37,18 @@ class MealDetailViewController: UIViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = false
 
+        if connection {
+            configureForMealDB()
+        } else {
+            
+            // Load from Core Data
+            
+        }
+    }
+    
+    // MARK: - Helper Methods
+    
+    fileprivate func configureForMealDB() {
         let services = Services()
         services.fetchMealDetailsFor(id: id) { [weak self] viewModel, error in
             guard let viewModel = viewModel else {
@@ -50,8 +63,20 @@ class MealDetailViewController: UIViewController {
                 self?.youTubeView.load(withVideoId: viewModel.youTubeID)
                 self?.categoryLabel.text = viewModel.category
                 self?.ingredientsLabel.text = viewModel.ingredients
+                
+                // Persist to Core Data
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let coreDataRecipe = CoreDataRecipe(context: appDelegate.persistentContainer.viewContext)
+                coreDataRecipe.title = viewModel.title
+                coreDataRecipe.instructions = viewModel.instructions
+                coreDataRecipe.youTubeID = viewModel.youTubeID
+                coreDataRecipe.category = viewModel.category
+                coreDataRecipe.ingredients = viewModel.ingredients
+                appDelegate.saveContext()
             }
             
+
         }
     }
 }

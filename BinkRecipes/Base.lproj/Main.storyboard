@@ -192,7 +192,7 @@
                                 <rect key="frame" x="0.0" y="438" width="414" height="424"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cCM-eb-SpO">
-                                        <rect key="frame" x="0.0" y="10" width="414" height="557"/>
+                                        <rect key="frame" x="0.0" y="10" width="414" height="587"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJa-ri-Acn">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
@@ -212,26 +212,50 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyj-fl-WI6">
-                                                <rect key="frame" x="0.0" y="60" width="414" height="137"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyk-u8-off">
+                                                <rect key="frame" x="0.0" y="60" width="414" height="147"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyj-fl-WI6">
+                                                        <rect key="frame" x="10" y="10" width="394" height="137"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="137" id="5QJ-bn-ol2"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="137" id="5QJ-bn-ol2"/>
+                                                    <constraint firstItem="vyj-fl-WI6" firstAttribute="leading" secondItem="lyk-u8-off" secondAttribute="leading" constant="10" id="27d-s3-z3h"/>
+                                                    <constraint firstItem="vyj-fl-WI6" firstAttribute="top" secondItem="lyk-u8-off" secondAttribute="top" constant="10" id="6hc-kJ-8SE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vyj-fl-WI6" secondAttribute="trailing" constant="10" id="bsk-tm-Lpv"/>
+                                                    <constraint firstAttribute="bottom" secondItem="vyj-fl-WI6" secondAttribute="bottom" id="nm2-VJ-MNp"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZX-K6-mgP">
-                                                <rect key="frame" x="0.0" y="197" width="414" height="150"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIE-xW-o0W">
+                                                <rect key="frame" x="0.0" y="207" width="414" height="170"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZX-K6-mgP">
+                                                        <rect key="frame" x="10" y="10" width="394" height="150"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="jhr-IC-JUl"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="jhr-IC-JUl"/>
+                                                    <constraint firstItem="iZX-K6-mgP" firstAttribute="top" secondItem="VIE-xW-o0W" secondAttribute="top" constant="10" id="76x-pU-7b2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iZX-K6-mgP" secondAttribute="trailing" constant="10" id="96l-Hn-yjb"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iZX-K6-mgP" secondAttribute="bottom" constant="10" id="adH-tS-6ag"/>
+                                                    <constraint firstItem="iZX-K6-mgP" firstAttribute="leading" secondItem="VIE-xW-o0W" secondAttribute="leading" constant="10" id="yRJ-DK-Kc6"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lf4-Hy-ytu" customClass="WKYTPlayerView">
-                                                <rect key="frame" x="0.0" y="347" width="414" height="210"/>
+                                                <rect key="frame" x="0.0" y="377" width="414" height="210"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="210" id="YfE-NV-UFf"/>

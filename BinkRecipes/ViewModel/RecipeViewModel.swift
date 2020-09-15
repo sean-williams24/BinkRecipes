@@ -19,7 +19,7 @@ struct RecipeViewModel {
     
     init(recipe: Recipe) {
         self.title = recipe.strMeal
-        self.instructions = recipe.strInstructions
+        self.instructions = recipe.strInstructions + "\n\nCheck out the tutorial video below..."
         
         if let url = URL(string: recipe.strMealThumb) {
             if let imgData = try? Data(contentsOf: url) {

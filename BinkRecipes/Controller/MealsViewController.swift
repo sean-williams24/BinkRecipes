@@ -6,10 +6,11 @@
 //  Copyright © 2020 Sean Williams. All rights reserved.
 //
 
+import CoreData
 import Network
 import UIKit
 
-class MealsViewController: UIViewController {
+class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
     // MARK: - Outlets
 
@@ -21,6 +22,9 @@ class MealsViewController: UIViewController {
     var category: String!
     var mealViewModels = [MealViewModel]()
     var id: String!
+    var fetchedResultsController: NSFetchedResultsController<CoreDataRecipe>!
+    var connected = true
+
     
     // MARK: - Life Cylce
     
@@ -30,20 +34,6 @@ class MealsViewController: UIViewController {
         let barButtonAttributes: [NSAttributedString.Key : Any] = [.font: UIFont(name: "Didot", size: 30) as Any]
         navigationController?.navigationBar.largeTitleTextAttributes = barButtonAttributes
         title = category
-        
-        let monitor = NWPathMonitor()
-        monitor.pathUpdateHandler = { path in
-            if path.status == .satisfied {
-                self.fetchMealsFromMealsDB()
-            } else {
-                // Fetch from Core Data
-                
-                
-            }
-        }
-        
-        let queue = DispatchQueue(label: "Monitor")
-        monitor.start(queue: queue)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,12 +41,54 @@ class MealsViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        self.setupFetchedResultsController()
+        
+        let monitor = NWPathMonitor()
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                self.connected = true
+                self.fetchMealsFromMealsDB()
+            } else {
+                // Fetch from Core Data
+                self.connected = false
+                DispatchQueue.main.async {
+                    self.title = "Viewing History"
+                }
+            }
+        }
 
+        let queue = DispatchQueue(label: "Monitor")
+        monitor.start(queue: queue)
     }
     
     
-    // MARK: - Helper Methods
-
+    
+    
+    //MARK: - Helper Methods
+    
+    fileprivate func setupFetchedResultsController() {
+        let fetchRequest: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
+//        let predicate = NSPredicate(format: "venueName == %@", currentVenue.name)
+//        fetchRequest.predicate = predicate
+        
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        //Instantiate fetched results controller
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: appDelegate.persistentContainer.viewContext , sectionNameKeyPath: nil, cacheName: nil)
+        
+        fetchedResultsController.delegate = self
+        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            print("The fetch could not be performed: \(error.localizedDescription)")
+        }
+    }
+    
+    
     fileprivate func fetchMealsFromMealsDB() {
         let services = Services()
         services.fetchMealsFor(category: category) { [weak self] meals, error in
@@ -89,13 +121,20 @@ class MealsViewController: UIViewController {
 extension MealsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        mealViewModels.count
+        if connected {
+            return mealViewModels.count
+        } else {
+            return fetchedResultsController.sections?[section].numberOfObjects ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mealCell", for: indexPath) as! MealTableViewCell
-        cell.viewModel = mealViewModels[indexPath.row]
         
+        let coreDataRecipe = fetchedResultsController.object(at: indexPath)
+        let viewModel = MealViewModel(recipe: coreDataRecipe)
+        
+        cell.viewModel = connected ? mealViewModels[indexPath.row] : viewModel
         return cell
     }
     

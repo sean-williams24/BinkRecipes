@@ -79,16 +79,6 @@ class Services {
                 return
             }
             
-//            do {
-//                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-//                    print(json)
-//
-//                }
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-            
-            
             let decoder = JSONDecoder()
             if let recipes = try? decoder.decode(Recipes.self, from: data) {
                 if let recipe = recipes.meals.first {

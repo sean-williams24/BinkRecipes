@@ -2,6 +2,8 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CoreDataRecipe" representedClassName="CoreDataRecipe" syncable="YES" codeGenerationType="class">
         <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="ingredients" optional="YES" attributeType="String"/>
         <attribute name="instructions" optional="YES" attributeType="String"/>
@@ -9,6 +11,6 @@
         <attribute name="youTubeID" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="CoreDataRecipe" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="CoreDataRecipe" positionX="-63" positionY="-18" width="128" height="163"/>
     </elements>
 </model>

@@ -73,6 +73,8 @@ class MealDetailViewController: UIViewController {
                 coreDataRecipe.youTubeID = viewModel.youTubeID
                 coreDataRecipe.category = viewModel.category
                 coreDataRecipe.ingredients = viewModel.ingredients
+                coreDataRecipe.id = self?.id
+                coreDataRecipe.date = Date()
                 appDelegate.saveContext()
             }
             

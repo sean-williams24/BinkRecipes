@@ -17,8 +17,13 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     var viewModel: CategoryViewModel! {
         didSet {
             textLabel.attributedText = viewModel.title
-            imageView.sd_setImage(with: URL(string: viewModel.imageURLString), placeholderImage: UIImage(named: "bink"))
             imageView.contentMode = viewModel.contentMode
+            
+            if viewModel.title.string == "View Previously Viewed Recipes".uppercased() {
+                imageView.image = UIImage(named: "no.wifi")
+            } else {
+                imageView.sd_setImage(with: URL(string: viewModel.imageURLString), placeholderImage: UIImage(named: "bink"))
+            }
         }
     }
     

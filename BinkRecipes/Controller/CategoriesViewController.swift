@@ -6,6 +6,7 @@
 //  Copyright © 2020 Sean Williams. All rights reserved.
 //
 
+import Network
 import UIKit
 
 class CategoriesViewController: UIViewController {
@@ -21,7 +22,7 @@ class CategoriesViewController: UIViewController {
     
     var categoryViewModels = [CategoryViewModel]()
     let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
-    let itemsPerRow: CGFloat = 2.0
+    var itemsPerRow: CGFloat = 2.0
     var category: String!
     let titleMinHeight: CGFloat = 0.0
     var titleViewMaxHeight: CGFloat = 100
@@ -31,19 +32,49 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let services = Services()
-        services.fetchCategories { categories, error in
-            guard error == nil else {
-                print(error?.localizedDescription as Any)
-                return
+        
+        let monitor = NWPathMonitor()
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                // Connected
+                print("Connected")
+                self.itemsPerRow = 2.0
+                let services = Services()
+                services.fetchCategories { [weak self] categories, error in
+                    guard error == nil else {
+                        print(error?.localizedDescription as Any)
+                        return
+                    }
+                    
+                    self?.categoryViewModels = categories
+                    
+                    DispatchQueue.main.async {
+                         self?.collectionView.reloadData()
+                     }
+                }
+            } else {
+                // Disconnnected
+                print("Disconnected")
+                
+                self.categoryViewModels = []
+                self.itemsPerRow = 1.0
+                
+                let noConnectionCategory = Category(idCategory: "0", strCategory: "View Previously Viewed Recipes", strCategoryThumb: "", strCategoryDescription: "")
+                let noConnectionViewModel = CategoryViewModel(category: noConnectionCategory)
+                self.categoryViewModels.append(noConnectionViewModel)
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
+
             }
-            
-            self.categoryViewModels = categories
-            
-            DispatchQueue.main.async {
-                 self.collectionView.reloadData()
-             }
         }
+        
+        let queue = DispatchQueue(label: "Monitor")
+        monitor.start(queue: queue)
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

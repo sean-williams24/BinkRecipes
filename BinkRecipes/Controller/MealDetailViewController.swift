@@ -37,19 +37,19 @@ class MealDetailViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
 
         let services = Services()
-        services.fetchMealDetailsFor(id: id) { viewModel, error in
+        services.fetchMealDetailsFor(id: id) { [weak self] viewModel, error in
             guard let viewModel = viewModel else {
                 print(error?.localizedDescription as Any)
                 return
             }
             
             DispatchQueue.main.async {
-                self.titleLabel.text = viewModel.title
-                self.instructionsLabel.text = viewModel.instructions
-                self.imageView.image = viewModel.image
-                self.youTubeView.load(withVideoId: viewModel.youTubeID)
-                self.categoryLabel.text = viewModel.category
-                self.ingredientsLabel.text = viewModel.ingredients
+                self?.titleLabel.text = viewModel.title
+                self?.instructionsLabel.text = viewModel.instructions
+                self?.imageView.image = viewModel.image
+                self?.youTubeView.load(withVideoId: viewModel.youTubeID)
+                self?.categoryLabel.text = viewModel.category
+                self?.ingredientsLabel.text = viewModel.ingredients
             }
             
         }

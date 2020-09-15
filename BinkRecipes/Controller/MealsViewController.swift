@@ -6,6 +6,7 @@
 //  Copyright © 2020 Sean Williams. All rights reserved.
 //
 
+import Network
 import UIKit
 
 class MealsViewController: UIViewController {
@@ -30,21 +31,19 @@ class MealsViewController: UIViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = barButtonAttributes
         title = category
         
-        let services = Services()
-        services.fetchMealsFor(category: category) { meals, error in
-            guard error == nil else {
-                print(error?.localizedDescription as Any)
-                return
-            }
-            
-            self.mealViewModels = meals
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+        let monitor = NWPathMonitor()
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                self.fetchMealsFromMealsDB()
+            } else {
+                // Fetch from Core Data
+                
                 
             }
         }
         
+        let queue = DispatchQueue(label: "Monitor")
+        monitor.start(queue: queue)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +53,26 @@ class MealsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
 
     }
+    
+    
+    // MARK: - Helper Methods
+
+    fileprivate func fetchMealsFromMealsDB() {
+        let services = Services()
+        services.fetchMealsFor(category: category) { [weak self] meals, error in
+            guard error == nil else {
+                print(error?.localizedDescription as Any)
+                return
+            }
+            
+            self?.mealViewModels = meals
+            
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
     
     // MARK: - Navigation
     

@@ -35,13 +35,19 @@ class MealDetailViewController: UIViewController {
         
         
         let services = Services()
-        services.fetchMealDetailsFor(id: id) { recipe, error in
-            guard error == nil else {
+        services.fetchMealDetailsFor(id: id) { viewModel, error in
+            guard let viewModel = viewModel else {
                 print(error?.localizedDescription as Any)
                 return
             }
             
-            print(recipe?.title as Any)
+            DispatchQueue.main.async {
+                self.titleLabel.text = viewModel.title
+                self.instructionsLabel.text = viewModel.instructions
+                self.imageView.image = viewModel.image
+                self.youTubeView.load(withVideoId: viewModel.youTubeID)
+            }
+            
         }
     }
     

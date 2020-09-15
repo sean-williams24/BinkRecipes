@@ -6,19 +6,32 @@
 //  Copyright © 2020 Sean Williams. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct RecipeViewModel {
     
     public let title: String
     public let instructions: String
-    public let imageURLString: String
+    public var image: UIImage?
+    public let ingredients: String
+    public let youTubeID: String
     
     
     init(recipe: Recipe) {
         self.title = recipe.strMeal
         self.instructions = recipe.strInstructions
-        self.imageURLString = recipe.strMealThumb
+        
+        if let url = URL(string: recipe.strMealThumb) {
+            if let imgData = try? Data(contentsOf: url) {
+                if let img = UIImage(data: imgData) {
+                    self.image = img
+                }
+            }
+        }
+        
+        self.youTubeID = String(recipe.strYouTube?.dropFirst(32) ?? "")
+        
+        self.ingredients = recipe.strIngredient1!
     }
     
 }

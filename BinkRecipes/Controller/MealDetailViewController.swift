@@ -63,11 +63,7 @@ extension MealDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffsetY = scrollView.contentOffset.y
         let newTitleHeight = imageViewHeightConstraint.constant - contentOffsetY
-        
-        
-        print(contentOffsetY)
-        print(newTitleHeight)
-        
+ 
         if newTitleHeight < titleMinHeight {
             imageViewHeightConstraint.constant = titleMinHeight
         } else if newTitleHeight > titleViewMaxHeight {

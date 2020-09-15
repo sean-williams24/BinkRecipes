@@ -23,7 +23,8 @@ class CategoriesViewController: UIViewController {
     let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
     let itemsPerRow: CGFloat = 2.0
     var category: String!
-    
+    let titleMinHeight: CGFloat = 0.0
+    var titleViewMaxHeight: CGFloat = 100
     
     // MARK: - Life Cycle
 
@@ -102,5 +103,25 @@ extension CategoriesViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
+    }
+}
+
+
+// MARK: - Scroll View Delegates
+
+extension CategoriesViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        let newTitleHeight = titleHeightConstraint.constant - contentOffsetY
+        
+        if newTitleHeight < titleMinHeight {
+            titleHeightConstraint.constant = titleMinHeight
+        } else if newTitleHeight > titleViewMaxHeight {
+            titleHeightConstraint.constant = titleViewMaxHeight
+        } else {
+            titleHeightConstraint.constant = titleHeightConstraint.constant - contentOffsetY
+            scrollView.contentOffset.y = 0.0
+        }
     }
 }

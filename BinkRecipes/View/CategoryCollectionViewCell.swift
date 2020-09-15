@@ -18,6 +18,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         didSet {
             textLabel.attributedText = viewModel.title
             imageView.sd_setImage(with: URL(string: viewModel.imageURLString), placeholderImage: UIImage(named: "bink"))
+            imageView.contentMode = viewModel.contentMode
         }
     }
     
@@ -29,6 +30,4 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 3
         
     }
-    
-
 }

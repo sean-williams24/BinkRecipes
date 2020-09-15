@@ -16,6 +16,7 @@ struct CategoryViewModel {
 
     public let title: NSAttributedString
     public let imageURLString: String
+    public let contentMode: UIImageView.ContentMode
     
     // MARK: - Object Lifecycle
 
@@ -25,5 +26,11 @@ struct CategoryViewModel {
         
         self.title = attributedString
         self.imageURLString = category.strCategoryThumb
+        
+        if attributedString.string == "GOAT" || attributedString.string == "BREAKFAST" {
+            contentMode = .scaleAspectFill
+        } else {
+            contentMode = .scaleAspectFit
+        }
     }
 }

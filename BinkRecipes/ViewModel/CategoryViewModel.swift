@@ -18,6 +18,7 @@ struct CategoryViewModel {
     public let imageURLString: String
     public let contentMode: UIImageView.ContentMode
     
+    
     // MARK: - Object Lifecycle
 
     public init (category: Category) {

@@ -30,7 +30,7 @@ class CategoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         let services = Services()
         services.fetchCategories { categories, error in
             guard error == nil else {

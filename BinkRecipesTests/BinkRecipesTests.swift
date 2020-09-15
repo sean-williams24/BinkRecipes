@@ -27,6 +27,7 @@ class BinkRecipesTests: XCTestCase {
         
         XCTAssertEqual(attrCategory, categoryViewModel.title)
         XCTAssertEqual(category.strCategoryThumb, "www.images.com/beef")
+        XCTAssertEqual(categoryViewModel.contentMode, UIImageView.ContentMode.scaleAspectFit)
     }
 
 

@@ -26,14 +26,16 @@ class MealDetailViewController: UIViewController {
     // MARK: - Properties
     
     var id: String!
-    
+    let titleMinHeight: CGFloat = 0.0
+    var titleViewMaxHeight: CGFloat = 300
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        navigationController?.navigationBar.prefersLargeTitles = false
+
         let services = Services()
         services.fetchMealDetailsFor(id: id) { viewModel, error in
             guard let viewModel = viewModel else {
@@ -52,9 +54,27 @@ class MealDetailViewController: UIViewController {
             
         }
     }
-    
-    
+}
 
+// MARK: - Scroll View Delegates
+
+extension MealDetailViewController: UIScrollViewDelegate {
     
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        let newTitleHeight = imageViewHeightConstraint.constant - contentOffsetY
+        
+        
+        print(contentOffsetY)
+        print(newTitleHeight)
+        
+        if newTitleHeight < titleMinHeight {
+            imageViewHeightConstraint.constant = titleMinHeight
+        } else if newTitleHeight > titleViewMaxHeight {
+            imageViewHeightConstraint.constant = titleViewMaxHeight
+        } else {
+            imageViewHeightConstraint.constant = imageViewHeightConstraint.constant - contentOffsetY
+            scrollView.contentOffset.y = 0.0
+        }
+    }
 }

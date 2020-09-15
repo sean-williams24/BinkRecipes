@@ -164,7 +164,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LKD-m9-LxM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="d0H-el-tga"/>
+                    <navigationItem key="navigationItem" id="d0H-el-tga">
+                        <barButtonItem key="backBarButtonItem" title="-" id="KtO-KI-r96"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="qKD-iz-yEk" id="mbR-EQ-B8S"/>
                         <segue destination="EZk-mG-Nyl" kind="show" identifier="showDetail" id="2aa-pu-eaR"/>
@@ -183,44 +185,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tsV-fm-QjY">
-                                <rect key="frame" x="0.0" y="88" width="414" height="350"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="Yrw-xz-DUY"/>
+                                    <constraint firstAttribute="height" constant="300" id="Yrw-xz-DUY"/>
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dva-gV-VkV">
-                                <rect key="frame" x="0.0" y="438" width="414" height="424"/>
+                                <rect key="frame" x="0.0" y="388" width="414" height="474"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cCM-eb-SpO">
                                         <rect key="frame" x="0.0" y="10" width="414" height="587"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJa-ri-Acn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="yJa-ri-Acn">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="gtr-aS-4Om"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5e-8Z-kN6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5e-8Z-kN6">
                                                 <rect key="frame" x="0.0" y="35" width="414" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="A3F-Fh-5fH"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyk-u8-off">
                                                 <rect key="frame" x="0.0" y="60" width="414" height="147"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyj-fl-WI6">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyj-fl-WI6">
                                                         <rect key="frame" x="10" y="10" width="394" height="137"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="137" id="5QJ-bn-ol2"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -236,12 +238,12 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIE-xW-o0W">
                                                 <rect key="frame" x="0.0" y="207" width="414" height="170"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZX-K6-mgP">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZX-K6-mgP">
                                                         <rect key="frame" x="10" y="10" width="394" height="150"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="jhr-IC-JUl"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -275,6 +277,9 @@
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="PHk-9L-Dbj"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="dNl-8g-Xms"/>
+                                <connections>
+                                    <outlet property="delegate" destination="EZk-mG-Nyl" id="42M-TO-A7k"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

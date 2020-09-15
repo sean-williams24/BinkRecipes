@@ -26,6 +26,10 @@ class MealsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let barButtonAttributes: [NSAttributedString.Key : Any] = [.font: UIFont(name: "Didot", size: 30) as Any]
+        navigationController?.navigationBar.largeTitleTextAttributes = barButtonAttributes
+        title = category
+        
         let services = Services()
         services.fetchMealsFor(category: category) { meals, error in
             guard error == nil else {
@@ -47,6 +51,8 @@ class MealsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.prefersLargeTitles = true
+
     }
     
     // MARK: - Navigation

@@ -19,7 +19,7 @@ struct RecipeViewModel {
     
     
     init(recipe: Recipe) {
-        self.title = recipe.strMeal
+        self.title = recipe.strMeal.uppercased()
         self.instructions = recipe.strInstructions + "\n\nCheck out the tutorial video below..."
         self.category = recipe.strArea + " / " + recipe.strCategory
         self.youTubeID = String(recipe.strYouTube?.dropFirst(32) ?? "")

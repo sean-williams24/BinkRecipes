@@ -42,7 +42,6 @@ struct Recipes: Codable {
 struct Recipe: Codable {
     let idMeal: String
     let strMeal: String
-//    let strDrinkAlternate: String?
     let strCategory: String
     let strArea: String
     let strInstructions: String
@@ -70,3 +69,4 @@ struct Recipe: Codable {
     let strMeasure9: String?
     let strMeasure10: String?
 }
+

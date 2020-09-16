@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RECIPES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="sf0-aI-WiU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RECIPES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="sf0-aI-WiU" customClass="SpringLabel" customModule="Spring">
                                 <rect key="frame" x="20" y="88" width="374" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="6CE-VA-1cb"/>
@@ -24,6 +24,10 @@
                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="42"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jyz-kn-uko">
                                 <rect key="frame" x="0.0" y="188" width="414" height="674"/>
@@ -95,6 +99,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Jyz-kn-uko" id="deN-SF-D7o"/>
+                        <outlet property="recipesLabel" destination="sf0-aI-WiU" id="hyX-1X-2bw"/>
                         <outlet property="titleHeightConstraint" destination="6CE-VA-1cb" id="cJL-Fc-ErB"/>
                         <segue destination="HXw-Gv-8a4" kind="show" identifier="showMeals" id="Bbv-Bm-i4H"/>
                     </connections>

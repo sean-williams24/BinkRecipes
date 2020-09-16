@@ -2,10 +2,12 @@ PODS:
   - SDWebImage (5.8.0):
     - SDWebImage/Core (= 5.8.0)
   - SDWebImage/Core (5.8.0)
+  - Spring (1.0.6)
   - YoutubePlayer-in-WKWebView (0.2.5)
 
 DEPENDENCIES:
   - SDWebImage (~> 5.0)
+  - Spring (from `https://github.com/MengTo/Spring.git`)
   - YoutubePlayer-in-WKWebView (~> 0.2.0)
 
 SPEC REPOS:
@@ -13,10 +15,20 @@ SPEC REPOS:
     - SDWebImage
     - YoutubePlayer-in-WKWebView
 
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
+    :git: https://github.com/MengTo/Spring.git
+
 SPEC CHECKSUMS:
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   YoutubePlayer-in-WKWebView: 4dad12b3ece938a6456fa4374df78942f88b485a
 
-PODFILE CHECKSUM: 2f4abd49f2ff85ac8310f045c95d7d62b6e3afb4
+PODFILE CHECKSUM: 364579ec61e3bba5e9ae964d6bc93e089ea34950
 
 COCOAPODS: 1.9.3

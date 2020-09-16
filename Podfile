@@ -8,6 +8,7 @@ target 'BinkRecipes' do
   # Pods for BinkRecipes
 
 	pod 'SDWebImage', '~> 5.0'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 	pod "YoutubePlayer-in-WKWebView", "~> 0.2.0" 
 
 

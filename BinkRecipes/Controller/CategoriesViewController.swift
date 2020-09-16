@@ -7,6 +7,7 @@
 //
 
 import Network
+import Spring
 import UIKit
 
 class CategoriesViewController: UIViewController {
@@ -16,6 +17,7 @@ class CategoriesViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var recipesLabel: SpringLabel!
     
     
     // MARK: - Properties
@@ -36,7 +38,10 @@ class CategoriesViewController: UIViewController {
         super.viewDidLoad()
         
         collectionView.backgroundColor = traitCollection.userInterfaceStyle == .dark ? UIColor.gray : UIColor.white
-
+        
+        recipesLabel.animation = "slideLeft"
+        recipesLabel.animate()
+    
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
                 // Connected
@@ -75,8 +80,12 @@ class CategoriesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.recipesLabel.animation = "swing"
+            self.recipesLabel.animate()
+        }
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

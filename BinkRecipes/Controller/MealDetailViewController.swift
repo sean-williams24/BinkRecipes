@@ -49,6 +49,7 @@ class MealDetailViewController: UIViewController {
             self.imageView.image = viewModel.image
             self.categoryLabel.text = viewModel.category
             self.ingredientsLabel.text = viewModel.ingredients
+            youTubeView.isHidden = true
             
         }
     }

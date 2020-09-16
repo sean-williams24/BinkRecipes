@@ -114,7 +114,7 @@ struct RecipeViewModel {
     
     init(coreDataRecipe: CoreDataRecipe) {
         self.title = coreDataRecipe.title ?? ""
-        self.instructions = coreDataRecipe.instructions ?? ""
+        self.instructions = String(coreDataRecipe.instructions?.dropLast(39) ?? "")
         self.category = coreDataRecipe.category ?? ""
         self.youTubeID = coreDataRecipe.youTubeID ?? ""
         self.ingredients = coreDataRecipe.ingredients ?? ""

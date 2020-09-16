@@ -82,6 +82,7 @@ class Services {
             let decoder = JSONDecoder()
             if let recipes = try? decoder.decode(Recipes.self, from: data) {
                 if let recipe = recipes.meals.first {
+                    
                     let recipeViewModel = RecipeViewModel(recipe: recipe)
                     completion(recipeViewModel, nil)
                 }

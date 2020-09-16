@@ -47,7 +47,6 @@ class MealDetailViewController: UIViewController {
             self.titleLabel.text = viewModel.title
             self.instructionsLabel.text = viewModel.instructions
             self.imageView.image = viewModel.image
-//            self.youTubeView.load(withVideoId: viewModel.youTubeID)
             self.categoryLabel.text = viewModel.category
             self.ingredientsLabel.text = viewModel.ingredients
             
@@ -72,7 +71,7 @@ class MealDetailViewController: UIViewController {
                 self?.categoryLabel.text = viewModel.category
                 self?.ingredientsLabel.text = viewModel.ingredients
                 
-                // Persist to Core Data
+                // Persist recipe to Core Data
                 
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let coreDataRecipe = CoreDataRecipe(context: appDelegate.persistentContainer.viewContext)
@@ -88,6 +87,8 @@ class MealDetailViewController: UIViewController {
             }
         }
     }
+    
+    
 }
 
 // MARK: - Scroll View Delegates

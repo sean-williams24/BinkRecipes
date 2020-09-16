@@ -22,7 +22,7 @@ struct RecipeViewModel {
         self.title = recipe.strMeal.uppercased()
         self.instructions = recipe.strInstructions + "\n\nCheck out the tutorial video below..."
         self.category = recipe.strArea + " / " + recipe.strCategory
-        self.youTubeID = String(recipe.strYouTube?.dropFirst(32) ?? "")
+        self.youTubeID = String(recipe.strYoutube?.dropFirst(32) ?? "")
         
         if let url = URL(string: recipe.strMealThumb) {
             if let imgData = try? Data(contentsOf: url) {

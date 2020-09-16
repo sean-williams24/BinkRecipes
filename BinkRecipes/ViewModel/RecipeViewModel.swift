@@ -111,4 +111,20 @@ struct RecipeViewModel {
         }
     }
     
+    
+    init(coreDataRecipe: CoreDataRecipe) {
+        self.title = coreDataRecipe.title ?? ""
+        self.instructions = coreDataRecipe.instructions ?? ""
+        self.category = coreDataRecipe.category ?? ""
+        self.youTubeID = coreDataRecipe.youTubeID ?? ""
+        self.ingredients = coreDataRecipe.ingredients ?? ""
+        
+        if let imgData = coreDataRecipe.image {
+            if let img = UIImage(data: imgData) {
+                self.image = img
+            }
+        }
+        
+    }
+    
 }

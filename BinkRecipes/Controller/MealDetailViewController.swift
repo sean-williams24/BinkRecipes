@@ -29,6 +29,7 @@ class MealDetailViewController: UIViewController {
     let titleMinHeight: CGFloat = 0.0
     var titleViewMaxHeight: CGFloat = 300
     var connection = true
+    var viewModel: RecipeViewModel!
     
     // MARK: - Life Cycle
     
@@ -42,6 +43,13 @@ class MealDetailViewController: UIViewController {
         } else {
             
             // Load from Core Data
+            
+            self.titleLabel.text = viewModel.title
+            self.instructionsLabel.text = viewModel.instructions
+            self.imageView.image = viewModel.image
+            self.youTubeView.load(withVideoId: viewModel.youTubeID)
+            self.categoryLabel.text = viewModel.category
+            self.ingredientsLabel.text = viewModel.ingredients
             
         }
     }
@@ -75,10 +83,9 @@ class MealDetailViewController: UIViewController {
                 coreDataRecipe.ingredients = viewModel.ingredients
                 coreDataRecipe.id = self?.id
                 coreDataRecipe.date = Date()
+                coreDataRecipe.image = viewModel.image?.pngData()
                 appDelegate.saveContext()
             }
-            
-
         }
     }
 }

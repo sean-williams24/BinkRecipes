@@ -17,8 +17,13 @@ class MealTableViewCell: UITableViewCell {
     
     var viewModel: MealViewModel! {
         didSet {
-            mealImageView.sd_setImage(with: URL(string: viewModel.imageURLString), placeholderImage: UIImage(named: "bink"))
             mealTitleLabel.text = viewModel.mealTitle
+            
+            if viewModel.image == nil {
+                mealImageView.sd_setImage(with: URL(string: viewModel.imageURLString), placeholderImage: UIImage(named: "bink"))
+            } else {
+                mealImageView.image = viewModel.image
+            }
         }
     }
 }

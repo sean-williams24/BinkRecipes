@@ -1,0 +1,6 @@
+framework module Pods_BinkRecipesTests {
+  umbrella header "Pods-BinkRecipesTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

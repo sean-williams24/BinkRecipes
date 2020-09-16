@@ -26,18 +26,27 @@ class CategoriesViewController: UIViewController {
     var category: String!
     let titleMinHeight: CGFloat = 0.0
     var titleViewMaxHeight: CGFloat = 100
+    let monitor = NWPathMonitor()
+    let queue = DispatchQueue(label: "Monitor")
+
     
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        let monitor = NWPathMonitor()
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
                 // Connected
-                print("Connected")
+                print("Connected first VC")
                 self.itemsPerRow = 2.0
                 let services = Services()
                 services.fetchCategories { [weak self] categories, error in
@@ -54,7 +63,7 @@ class CategoriesViewController: UIViewController {
                 }
             } else {
                 // Disconnnected
-                print("Disconnected")
+                print("Disconnected first VC")
                 
                 self.categoryViewModels = []
                 self.itemsPerRow = 1.0
@@ -66,21 +75,11 @@ class CategoriesViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
-                
-
             }
         }
-        
-        let queue = DispatchQueue(label: "Monitor")
-        monitor.start(queue: queue)
-        
 
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        monitor.start(queue: queue)
+
     }
     
     

@@ -24,6 +24,7 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
     var id: String!
     var fetchedResultsController: NSFetchedResultsController<CoreDataRecipe>!
     var connected = true
+    var recipeViewModel: RecipeViewModel!
 
     
     // MARK: - Life Cylce
@@ -36,6 +37,8 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
         title = category
     }
     
+
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -43,21 +46,44 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
         navigationController?.navigationBar.prefersLargeTitles = true
         
         self.setupFetchedResultsController()
+        print(fetchedResultsController.fetchedObjects?.count as Any)
+        
         
         let monitor = NWPathMonitor()
         monitor.pathUpdateHandler = { path in
+            print("INSIDE")
             if path.status == .satisfied {
+                print("connected meals VC")
+                
                 self.connected = true
-                self.fetchMealsFromMealsDB()
+                
+                // If internet connection is re-established whilst viewing history - pop VC
+                if self.category == nil {
+                    print("SHould pop VC")
+                    DispatchQueue.main.async {
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
+                } else {
+                    self.fetchMealsFromMealsDB()
+                }
+                
+//                deleteCoreDataObjects()
+   
             } else {
+                print("Disconnected meals VC")
+                
                 // Fetch from Core Data
                 self.connected = false
                 DispatchQueue.main.async {
+                    self.mealViewModels = []
+                    self.category = nil
                     self.title = "Viewing History"
+                    self.tableView.reloadData()
+                    
                 }
             }
         }
-
+        
         let queue = DispatchQueue(label: "Monitor")
         monitor.start(queue: queue)
     }
@@ -66,6 +92,24 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
     
     
     //MARK: - Helper Methods
+    
+    // TODO: - remove method when no longer needed
+    
+    fileprivate func deleteCoreDataObjects() {
+        DispatchQueue.main.async {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            if let objects = self.fetchedResultsController.fetchedObjects {
+                for obj in objects {
+                    print(obj.title as Any)
+                    appDelegate.persistentContainer.viewContext.delete(obj)
+                    appDelegate.saveContext()
+                }
+            }
+            
+            print(self.fetchedResultsController.fetchedObjects?.count as Any)
+        }
+    }
+    
     
     fileprivate func setupFetchedResultsController() {
         let fetchRequest: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
@@ -110,9 +154,14 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! MealDetailViewController
-        vc.id = id
+        
+        if connected {
+            vc.id = id
+        } else {
+            vc.connection = false
+            vc.viewModel = recipeViewModel
+        }
     }
-
 }
 
 
@@ -131,17 +180,27 @@ extension MealsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mealCell", for: indexPath) as! MealTableViewCell
         
-        let coreDataRecipe = fetchedResultsController.object(at: indexPath)
-        let viewModel = MealViewModel(recipe: coreDataRecipe)
-        
-        cell.viewModel = connected ? mealViewModels[indexPath.row] : viewModel
+        if connected {
+            cell.viewModel = mealViewModels[indexPath.row]
+        } else {
+            let coreDataRecipe = fetchedResultsController.object(at: indexPath)
+            let viewModel = MealViewModel(recipe: coreDataRecipe)
+            cell.viewModel = viewModel
+        }
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        id = mealViewModels[indexPath.row].id
+        
+        if connected {
+            id = mealViewModels[indexPath.row].id
+        } else {
+            let coreDataRecipe = fetchedResultsController.object(at: indexPath)
+            let viewModel = RecipeViewModel(coreDataRecipe: coreDataRecipe)
+            recipeViewModel = viewModel
+        }
+        
         performSegue(withIdentifier: "showDetail", sender: self)
     }
-    
-    
 }

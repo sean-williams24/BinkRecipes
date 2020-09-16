@@ -52,7 +52,6 @@ class MealsViewController: UIViewController {
                     }
                 } else {
                     self.fetchMealsFromMealsDB()
-//                    self.deleteCoreDataObjects()
                 }
             } else {
                 // Fetch recipes from Core Data
@@ -77,30 +76,8 @@ class MealsViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .always
     }
     
-//    override func viewDidDisappear(_ animated: Bool) {
-//        super.viewDidDisappear(animated)
-//        fetchedResultsController = nil
-//    }
     
     //MARK: - Helper Methods
-    
-    // TODO: - remove method when no longer needed
-    
-    fileprivate func deleteCoreDataObjects() {
-        DispatchQueue.main.async {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            if let objects = self.fetchedResultsController.fetchedObjects {
-                for obj in objects {
-                    print(obj.title as Any)
-                    appDelegate.persistentContainer.viewContext.delete(obj)
-                    appDelegate.saveContext()
-                }
-            }
-
-            print(self.fetchedResultsController.fetchedObjects?.count as Any)
-        }
-    }
-    
     
     fileprivate func setupFetchedResultsController() {
         let fetchRequest: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
@@ -115,10 +92,9 @@ class MealsViewController: UIViewController {
         do {
             try fetchedResultsController.performFetch()
         } catch {
-            print("The fetch could not be performed: \(error.localizedDescription)")
+            self.showAlert(title: "Database Problem", message: "Sorry, we couldnt fetch your history at this time.")
         }
     }
-    
     
     fileprivate func fetchMealsFromMealsDB() {
         let services = Services()

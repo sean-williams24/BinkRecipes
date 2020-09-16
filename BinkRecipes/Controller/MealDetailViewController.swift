@@ -36,7 +36,6 @@ class MealDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.largeTitleDisplayMode = .never
 
         if connection {

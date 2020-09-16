@@ -60,7 +60,7 @@ class CategoriesViewController: UIViewController {
                      }
                 }
             } else {
-                // Disconnnected
+                // Disconnnected - show no connection UI in collection view cell via View Model
                 self.categoryViewModels = []
                 self.itemsPerRow = 1.0
                 
@@ -75,7 +75,6 @@ class CategoriesViewController: UIViewController {
         }
 
         monitor.start(queue: queue)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,7 +99,6 @@ class CategoriesViewController: UIViewController {
         let vc = segue.destination as! MealsViewController
         vc.category = category
     }
-
 }
 
 

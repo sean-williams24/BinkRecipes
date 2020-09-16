@@ -10,7 +10,7 @@ import CoreData
 import Network
 import UIKit
 
-class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate {
+class MealsViewController: UIViewController {
 
     // MARK: - Outlets
 
@@ -27,6 +27,7 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
     var recipeViewModel: RecipeViewModel!
     let monitor = NWPathMonitor()
     let queue = DispatchQueue(label: "Monitor")
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     
     // MARK: - Life Cylce
@@ -51,16 +52,13 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
                     }
                 } else {
                     self.fetchMealsFromMealsDB()
+//                    self.deleteCoreDataObjects()
                 }
-                
-                //                deleteCoreDataObjects()
-                
             } else {
-                // Fetch from Core Data
+                // Fetch recipes from Core Data
                 self.connected = false
                 DispatchQueue.main.async {
                     self.showAlert(title: "Oops", message: "Your Internet connection seems to be down. You can see your viewing history until your connection is re-established.")
-
                     self.mealViewModels = []
                     self.category = nil
                     self.title = "Viewing History"
@@ -72,7 +70,6 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
         monitor.start(queue: queue)
     }
     
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -80,25 +77,29 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
         navigationItem.largeTitleDisplayMode = .always
     }
     
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        fetchedResultsController = nil
+//    }
     
     //MARK: - Helper Methods
     
     // TODO: - remove method when no longer needed
     
-//    fileprivate func deleteCoreDataObjects() {
-//        DispatchQueue.main.async {
-//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//            if let objects = self.fetchedResultsController.fetchedObjects {
-//                for obj in objects {
-//                    print(obj.title as Any)
-//                    appDelegate.persistentContainer.viewContext.delete(obj)
-//                    appDelegate.saveContext()
-//                }
-//            }
-//
-//            print(self.fetchedResultsController.fetchedObjects?.count as Any)
-//        }
-//    }
+    fileprivate func deleteCoreDataObjects() {
+        DispatchQueue.main.async {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            if let objects = self.fetchedResultsController.fetchedObjects {
+                for obj in objects {
+                    print(obj.title as Any)
+                    appDelegate.persistentContainer.viewContext.delete(obj)
+                    appDelegate.saveContext()
+                }
+            }
+
+            print(self.fetchedResultsController.fetchedObjects?.count as Any)
+        }
+    }
     
     
     fileprivate func setupFetchedResultsController() {
@@ -107,7 +108,6 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         //Instantiate fetched results controller
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: appDelegate.persistentContainer.viewContext , sectionNameKeyPath: nil, cacheName: nil)
         
         fetchedResultsController.delegate = self
@@ -189,5 +189,30 @@ extension MealsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         performSegue(withIdentifier: "showDetail", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if !connected {
+            if editingStyle == .delete {
+                let recipeToDelete = fetchedResultsController.object(at: indexPath)
+                appDelegate.persistentContainer.viewContext.delete(recipeToDelete)
+                appDelegate.saveContext()
+            }
+        }
+    }
+}
+
+// MARK: Fetched results controller delegate
+
+extension MealsViewController: NSFetchedResultsControllerDelegate {
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .delete:
+            tableView.deleteRows(at: [indexPath!], with: .fade)
+            
+        default:
+            break
+        }
     }
 }

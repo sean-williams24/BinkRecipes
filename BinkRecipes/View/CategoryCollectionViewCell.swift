@@ -33,6 +33,5 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 0.6
         layer.cornerRadius = 3
-        
     }
 }

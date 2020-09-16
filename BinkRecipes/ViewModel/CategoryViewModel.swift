@@ -19,7 +19,7 @@ struct CategoryViewModel {
     public var contentMode: UIImageView.ContentMode
     
     
-    // MARK: - Object Lifecycle
+    // MARK: - Initializers
 
     public init (category: Category) {
         let attributedString = NSMutableAttributedString(string: category.strCategory.uppercased())
@@ -27,7 +27,6 @@ struct CategoryViewModel {
         
         self.title = attributedString
         self.imageURLString = category.strCategoryThumb
-        
         
         if attributedString.string == "GOAT" || attributedString.string == "BREAKFAST" {
             contentMode = .scaleAspectFill

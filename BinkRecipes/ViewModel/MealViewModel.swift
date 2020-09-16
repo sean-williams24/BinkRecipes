@@ -11,11 +11,16 @@ import UIKit
 
 struct MealViewModel {
     
+    // MARK: - Instance Properties
+
     public let mealTitle: String
     public let imageURLString: String
     public let id: String
     public var image: UIImage?
     
+    
+    // MARK: - Initializers
+
     public init (meal: Meal) {
         self.mealTitle = meal.strMeal
         self.imageURLString = meal.strMealThumb
@@ -34,6 +39,5 @@ extension MealViewModel {
                 self.image = img
             }
         }
-
     }
 }

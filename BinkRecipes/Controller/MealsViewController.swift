@@ -59,6 +59,8 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
                 // Fetch from Core Data
                 self.connected = false
                 DispatchQueue.main.async {
+                    self.showAlert(title: "Oops", message: "Your Internet connection seems to be down. You can see your viewing history until your connection is re-established.")
+
                     self.mealViewModels = []
                     self.category = nil
                     self.title = "Viewing History"
@@ -101,9 +103,6 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
     
     fileprivate func setupFetchedResultsController() {
         let fetchRequest: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
-//        let predicate = NSPredicate(format: "venueName == %@", currentVenue.name)
-//        fetchRequest.predicate = predicate
-        
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
@@ -167,6 +166,7 @@ extension MealsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mealCell", for: indexPath) as! MealTableViewCell
+        cell.selectionStyle = .none
         
         if connected {
             cell.viewModel = mealViewModels[indexPath.row]

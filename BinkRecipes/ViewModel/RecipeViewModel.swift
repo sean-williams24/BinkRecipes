@@ -10,6 +10,8 @@ import UIKit
 
 struct RecipeViewModel {
     
+    // MARK: - Instance Properties
+
     public let title: String
     public let instructions: String
     public var image: UIImage?
@@ -18,6 +20,8 @@ struct RecipeViewModel {
     public let category: String
     
     
+    // MARK: - Initializers
+
     init(recipe: Recipe) {
         self.title = recipe.strMeal.uppercased()
         self.instructions = recipe.strInstructions + "\n\nCheck out the tutorial video below..."
@@ -124,7 +128,5 @@ struct RecipeViewModel {
                 self.image = img
             }
         }
-        
     }
-    
 }

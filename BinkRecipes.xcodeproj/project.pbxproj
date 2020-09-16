@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C8193B4526428139316026D /* Pods_BinkRecipes_BinkRecipesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19299FE21F800F8E41620DE5 /* Pods_BinkRecipes_BinkRecipesUITests.framework */; };
+		CE5DDBA925123D8500E61679 /* UIViewControllerExtension .swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DDBA825123D8500E61679 /* UIViewControllerExtension .swift */; };
 		CEC90FBA250F715900A1607F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FB9250F715900A1607F /* AppDelegate.swift */; };
 		CEC90FBC250F715900A1607F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FBB250F715900A1607F /* SceneDelegate.swift */; };
 		CEC90FBE250F715900A1607F /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FBD250F715900A1607F /* CategoriesViewController.swift */; };
@@ -16,7 +16,6 @@
 		CEC90FC6250F715C00A1607F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC90FC5250F715C00A1607F /* Assets.xcassets */; };
 		CEC90FC9250F715C00A1607F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC90FC7250F715C00A1607F /* LaunchScreen.storyboard */; };
 		CEC90FD4250F715C00A1607F /* BinkRecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FD3250F715C00A1607F /* BinkRecipesTests.swift */; };
-		CEC90FDF250F715C00A1607F /* BinkRecipesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FDE250F715C00A1607F /* BinkRecipesUITests.swift */; };
 		CEC90FED250F72A400A1607F /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FEC250F72A400A1607F /* Services.swift */; };
 		CEC90FF4250F7B2900A1607F /* MealDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FF3250F7B2900A1607F /* MealDB.swift */; };
 		CEC90FF6250F83B800A1607F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC90FF5250F83B800A1607F /* CategoryCollectionViewCell.swift */; };
@@ -38,13 +37,6 @@
 			remoteGlobalIDString = CEC90FB5250F715900A1607F;
 			remoteInfo = BinkRecipes;
 		};
-		CEC90FDB250F715C00A1607F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEC90FAE250F715900A1607F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CEC90FB5250F715900A1607F;
-			remoteInfo = BinkRecipes;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +49,7 @@
 		9229A8E72ED581025C1C010D /* Pods-BinkRecipes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BinkRecipes.debug.xcconfig"; path = "Target Support Files/Pods-BinkRecipes/Pods-BinkRecipes.debug.xcconfig"; sourceTree = "<group>"; };
 		926E1E048D5D6286BCBA8C92 /* Pods_BinkRecipes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BinkRecipes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1AB1EFF493BA1FDFDB4EA33 /* Pods-BinkRecipes-BinkRecipesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BinkRecipes-BinkRecipesUITests.release.xcconfig"; path = "Target Support Files/Pods-BinkRecipes-BinkRecipesUITests/Pods-BinkRecipes-BinkRecipesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CE5DDBA825123D8500E61679 /* UIViewControllerExtension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllerExtension .swift"; sourceTree = "<group>"; };
 		CEC90FB6250F715900A1607F /* BinkRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BinkRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC90FB9250F715900A1607F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC90FBB250F715900A1607F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,9 +62,6 @@
 		CEC90FCF250F715C00A1607F /* BinkRecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinkRecipesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC90FD3250F715C00A1607F /* BinkRecipesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinkRecipesTests.swift; sourceTree = "<group>"; };
 		CEC90FD5250F715C00A1607F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEC90FDA250F715C00A1607F /* BinkRecipesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinkRecipesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEC90FDE250F715C00A1607F /* BinkRecipesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinkRecipesUITests.swift; sourceTree = "<group>"; };
-		CEC90FE0250F715C00A1607F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC90FEC250F72A400A1607F /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		CEC90FF3250F7B2900A1607F /* MealDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDB.swift; sourceTree = "<group>"; };
 		CEC90FF5250F83B800A1607F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -97,14 +87,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D06DB8F334BC0D9D58C3273A /* Pods_BinkRecipesTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEC90FD7250F715C00A1607F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5C8193B4526428139316026D /* Pods_BinkRecipes_BinkRecipesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +121,6 @@
 			children = (
 				CEC90FB8250F715900A1607F /* BinkRecipes */,
 				CEC90FD2250F715C00A1607F /* BinkRecipesTests */,
-				CEC90FDD250F715C00A1607F /* BinkRecipesUITests */,
 				CEC90FB7250F715900A1607F /* Products */,
 				98B0DC0E833C9932EC0CBA94 /* Pods */,
 				C1141222BC7124E10AFF363F /* Frameworks */,
@@ -151,7 +132,6 @@
 			children = (
 				CEC90FB6250F715900A1607F /* BinkRecipes.app */,
 				CEC90FCF250F715C00A1607F /* BinkRecipesTests.xctest */,
-				CEC90FDA250F715C00A1607F /* BinkRecipesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,15 +164,6 @@
 			path = BinkRecipesTests;
 			sourceTree = "<group>";
 		};
-		CEC90FDD250F715C00A1607F /* BinkRecipesUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CEC90FDE250F715C00A1607F /* BinkRecipesUITests.swift */,
-				CEC90FE0250F715C00A1607F /* Info.plist */,
-			);
-			path = BinkRecipesUITests;
-			sourceTree = "<group>";
-		};
 		CEC90FEE250F72AB00A1607F /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +178,7 @@
 				CEC90FBD250F715900A1607F /* CategoriesViewController.swift */,
 				CEC90FFB250FB3C300A1607F /* MealsViewController.swift */,
 				CEC90FFF250FC86000A1607F /* MealDetailViewController.swift */,
+				CE5DDBA825123D8500E61679 /* UIViewControllerExtension .swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,26 +251,6 @@
 			productReference = CEC90FCF250F715C00A1607F /* BinkRecipesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CEC90FD9250F715C00A1607F /* BinkRecipesUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CEC90FE9250F715C00A1607F /* Build configuration list for PBXNativeTarget "BinkRecipesUITests" */;
-			buildPhases = (
-				CACBD5DC3CE75A7685F68587 /* [CP] Check Pods Manifest.lock */,
-				CEC90FD6250F715C00A1607F /* Sources */,
-				CEC90FD7250F715C00A1607F /* Frameworks */,
-				CEC90FD8250F715C00A1607F /* Resources */,
-				FD02B5FD63784A493AC8AD40 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CEC90FDC250F715C00A1607F /* PBXTargetDependency */,
-			);
-			name = BinkRecipesUITests;
-			productName = BinkRecipesUITests;
-			productReference = CEC90FDA250F715C00A1607F /* BinkRecipesUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -313,10 +265,6 @@
 						CreatedOnToolsVersion = 11.6;
 					};
 					CEC90FCE250F715C00A1607F = {
-						CreatedOnToolsVersion = 11.6;
-						TestTargetID = CEC90FB5250F715900A1607F;
-					};
-					CEC90FD9250F715C00A1607F = {
 						CreatedOnToolsVersion = 11.6;
 						TestTargetID = CEC90FB5250F715900A1607F;
 					};
@@ -337,7 +285,6 @@
 			targets = (
 				CEC90FB5250F715900A1607F /* BinkRecipes */,
 				CEC90FCE250F715C00A1607F /* BinkRecipesTests */,
-				CEC90FD9250F715C00A1607F /* BinkRecipesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -354,13 +301,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CEC90FCD250F715C00A1607F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEC90FD8250F715C00A1607F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -409,28 +349,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CACBD5DC3CE75A7685F68587 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BinkRecipes-BinkRecipesUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F7E236E747ADD210731C4495 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,23 +371,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FD02B5FD63784A493AC8AD40 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BinkRecipes-BinkRecipesUITests/Pods-BinkRecipes-BinkRecipesUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BinkRecipes-BinkRecipesUITests/Pods-BinkRecipes-BinkRecipesUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BinkRecipes-BinkRecipesUITests/Pods-BinkRecipes-BinkRecipesUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -481,6 +382,7 @@
 				CEC90FBE250F715900A1607F /* CategoriesViewController.swift in Sources */,
 				CEC91000250FC86000A1607F /* MealDetailViewController.swift in Sources */,
 				CEC90FFE250FB4B100A1607F /* MealViewModel.swift in Sources */,
+				CE5DDBA925123D8500E61679 /* UIViewControllerExtension .swift in Sources */,
 				CEC90FBA250F715900A1607F /* AppDelegate.swift in Sources */,
 				CEC90FBC250F715900A1607F /* SceneDelegate.swift in Sources */,
 				CEC90FF8250F978A00A1607F /* CategoryViewModel.swift in Sources */,
@@ -501,14 +403,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEC90FD6250F715C00A1607F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEC90FDF250F715C00A1607F /* BinkRecipesUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -516,11 +410,6 @@
 			isa = PBXTargetDependency;
 			target = CEC90FB5250F715900A1607F /* BinkRecipes */;
 			targetProxy = CEC90FD0250F715C00A1607F /* PBXContainerItemProxy */;
-		};
-		CEC90FDC250F715C00A1607F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CEC90FB5250F715900A1607F /* BinkRecipes */;
-			targetProxy = CEC90FDB250F715C00A1607F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -742,48 +631,6 @@
 			};
 			name = Release;
 		};
-		CEC90FEA250F715C00A1607F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F6B622A53E1F6669B65E104 /* Pods-BinkRecipes-BinkRecipesUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DN4729AK8V;
-				INFOPLIST_FILE = BinkRecipesUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.BinkRecipesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BinkRecipes;
-			};
-			name = Debug;
-		};
-		CEC90FEB250F715C00A1607F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1AB1EFF493BA1FDFDB4EA33 /* Pods-BinkRecipes-BinkRecipesUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DN4729AK8V;
-				INFOPLIST_FILE = BinkRecipesUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seanwilliams.BinkRecipesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BinkRecipes;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -810,15 +657,6 @@
 			buildConfigurations = (
 				CEC90FE7250F715C00A1607F /* Debug */,
 				CEC90FE8250F715C00A1607F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CEC90FE9250F715C00A1607F /* Build configuration list for PBXNativeTarget "BinkRecipesUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CEC90FEA250F715C00A1607F /* Debug */,
-				CEC90FEB250F715C00A1607F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

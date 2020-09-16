@@ -14,7 +14,6 @@ class MealTableViewCell: UITableViewCell {
     @IBOutlet weak var mealImageView: UIImageView!
     @IBOutlet weak var mealTitleLabel: UILabel!
     
-    
     var viewModel: MealViewModel! {
         didSet {
             mealTitleLabel.text = viewModel.mealTitle

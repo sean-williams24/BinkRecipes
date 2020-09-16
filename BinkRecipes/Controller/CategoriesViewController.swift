@@ -11,7 +11,7 @@ import Spring
 import UIKit
 
 class CategoriesViewController: UIViewController {
-
+    
     
     // MARK: - Outlets
     
@@ -24,16 +24,16 @@ class CategoriesViewController: UIViewController {
     
     var categoryViewModels = [CategoryViewModel]()
     let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
-    var itemsPerRow: CGFloat = 2.0
+    var itemsPerRow: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 3.0 : 2.0
     var category: String!
     let titleMinHeight: CGFloat = 0.0
     var titleViewMaxHeight: CGFloat = 100
     let monitor = NWPathMonitor()
     let queue = DispatchQueue(label: "Monitor")
-
+    
     
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +41,7 @@ class CategoriesViewController: UIViewController {
         
         recipesLabel.animation = "slideLeft"
         recipesLabel.animate()
-    
+        
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
                 // Connected
@@ -56,8 +56,8 @@ class CategoriesViewController: UIViewController {
                     self?.categoryViewModels = categories
                     
                     DispatchQueue.main.async {
-                         self?.collectionView.reloadData()
-                     }
+                        self?.collectionView.reloadData()
+                    }
                 }
             } else {
                 // Disconnnected - show no connection UI in collection view cell via View Model
@@ -73,7 +73,7 @@ class CategoriesViewController: UIViewController {
                 }
             }
         }
-
+        
         monitor.start(queue: queue)
     }
     

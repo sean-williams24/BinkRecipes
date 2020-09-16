@@ -11,9 +11,9 @@ import Network
 import UIKit
 
 class MealsViewController: UIViewController {
-
+    
     // MARK: - Outlets
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -28,7 +28,7 @@ class MealsViewController: UIViewController {
     let monitor = NWPathMonitor()
     let queue = DispatchQueue(label: "Monitor")
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
+    
     
     // MARK: - Life Cylce
     
@@ -151,7 +151,7 @@ extension MealsViewController: UITableViewDelegate, UITableViewDataSource {
             let viewModel = MealViewModel(recipe: coreDataRecipe)
             cell.viewModel = viewModel
         }
-
+        
         return cell
     }
     

@@ -11,7 +11,7 @@ import UIKit
 struct RecipeViewModel {
     
     // MARK: - Instance Properties
-
+    
     public let title: String
     public let instructions: String
     public var image: UIImage?
@@ -21,7 +21,7 @@ struct RecipeViewModel {
     
     
     // MARK: - Initializers
-
+    
     init(recipe: Recipe) {
         self.title = recipe.strMeal.uppercased()
         self.instructions = recipe.strInstructions + "\n\nCheck out the tutorial video below..."
@@ -41,7 +41,7 @@ struct RecipeViewModel {
                 self.ingredients.append("- " + measure + " " + ingredient + "\n")
             }
         }
-
+        
         if let ingredient = recipe.strIngredient2 {
             if let measure = recipe.strMeasure2 {
                 if ingredient != "" {
@@ -65,7 +65,7 @@ struct RecipeViewModel {
                 }
             }
         }
-
+        
         if let ingredient = recipe.strIngredient5 {
             if let measure = recipe.strMeasure5 {
                 if ingredient != "" {
@@ -81,7 +81,7 @@ struct RecipeViewModel {
                 }
             }
         }
-
+        
         if let ingredient = recipe.strIngredient7 {
             if let measure = recipe.strMeasure7 {
                 if ingredient != "" {
@@ -89,7 +89,7 @@ struct RecipeViewModel {
                 }
             }
         }
-
+        
         if let ingredient = recipe.strIngredient8 {
             if let measure = recipe.strMeasure8 {
                 if ingredient != "" {

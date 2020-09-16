@@ -31,18 +31,18 @@ class MealDetailViewController: UIViewController {
     var connection = true
     var viewModel: RecipeViewModel!
     
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.largeTitleDisplayMode = .never
-
+        
         if connection {
             configureForMealDB()
         } else {
-            
-            // Load from Core Data
+            // Load recipes from Core Data
             
             self.titleLabel.text = viewModel.title
             self.instructionsLabel.text = viewModel.instructions
@@ -50,15 +50,9 @@ class MealDetailViewController: UIViewController {
             self.categoryLabel.text = viewModel.category
             self.ingredientsLabel.text = viewModel.ingredients
             youTubeView.isHidden = true
-            
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
+
     
     // MARK: - Helper Methods
     
@@ -94,9 +88,8 @@ class MealDetailViewController: UIViewController {
             }
         }
     }
-    
-    
 }
+
 
 // MARK: - Scroll View Delegates
 
@@ -105,7 +98,7 @@ extension MealDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffsetY = scrollView.contentOffset.y
         let newTitleHeight = imageViewHeightConstraint.constant - contentOffsetY
- 
+        
         if newTitleHeight < titleMinHeight {
             imageViewHeightConstraint.constant = titleMinHeight
         } else if newTitleHeight > titleViewMaxHeight {

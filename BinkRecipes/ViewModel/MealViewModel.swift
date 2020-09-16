@@ -12,7 +12,7 @@ import UIKit
 struct MealViewModel {
     
     // MARK: - Instance Properties
-
+    
     public let mealTitle: String
     public let imageURLString: String
     public let id: String
@@ -20,7 +20,7 @@ struct MealViewModel {
     
     
     // MARK: - Initializers
-
+    
     public init (meal: Meal) {
         self.mealTitle = meal.strMeal
         self.imageURLString = meal.strMealThumb

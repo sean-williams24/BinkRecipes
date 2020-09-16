@@ -26,8 +26,8 @@ class MealDetailViewController: UIViewController {
     // MARK: - Properties
     
     var id: String!
-    let titleMinHeight: CGFloat = 0.0
-    var titleViewMaxHeight: CGFloat = 300
+    let imageViewMinimumHeight: CGFloat = 0.0
+    var imageViewMaxHeight: CGFloat = 300
     var connection = true
     var viewModel: RecipeViewModel!
     
@@ -49,7 +49,6 @@ class MealDetailViewController: UIViewController {
             self.imageView.image = viewModel.image
             self.categoryLabel.text = viewModel.category
             self.ingredientsLabel.text = viewModel.ingredients
-            youTubeView.isHidden = true
         }
     }
 
@@ -97,12 +96,12 @@ extension MealDetailViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffsetY = scrollView.contentOffset.y
-        let newTitleHeight = imageViewHeightConstraint.constant - contentOffsetY
+        let newImageViewHeight = imageViewHeightConstraint.constant - contentOffsetY
         
-        if newTitleHeight < titleMinHeight {
-            imageViewHeightConstraint.constant = titleMinHeight
-        } else if newTitleHeight > titleViewMaxHeight {
-            imageViewHeightConstraint.constant = titleViewMaxHeight
+        if newImageViewHeight < imageViewMinimumHeight {
+            imageViewHeightConstraint.constant = imageViewMinimumHeight
+        } else if newImageViewHeight > imageViewMaxHeight {
+            imageViewHeightConstraint.constant = imageViewMaxHeight
         } else {
             imageViewHeightConstraint.constant = imageViewHeightConstraint.constant - contentOffsetY
             scrollView.contentOffset.y = 0.0

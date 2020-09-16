@@ -36,7 +36,8 @@ class MealDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.prefersLargeTitles = false
+//        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.largeTitleDisplayMode = .never
 
         if connection {
             configureForMealDB()
@@ -53,6 +54,12 @@ class MealDetailViewController: UIViewController {
             
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     
     // MARK: - Helper Methods
     

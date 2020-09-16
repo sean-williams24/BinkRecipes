@@ -71,35 +71,32 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
     }
     
 
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
     }
-    
-    
     
     
     //MARK: - Helper Methods
     
     // TODO: - remove method when no longer needed
     
-    fileprivate func deleteCoreDataObjects() {
-        DispatchQueue.main.async {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            if let objects = self.fetchedResultsController.fetchedObjects {
-                for obj in objects {
-                    print(obj.title as Any)
-                    appDelegate.persistentContainer.viewContext.delete(obj)
-                    appDelegate.saveContext()
-                }
-            }
-            
-            print(self.fetchedResultsController.fetchedObjects?.count as Any)
-        }
-    }
+//    fileprivate func deleteCoreDataObjects() {
+//        DispatchQueue.main.async {
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            if let objects = self.fetchedResultsController.fetchedObjects {
+//                for obj in objects {
+//                    print(obj.title as Any)
+//                    appDelegate.persistentContainer.viewContext.delete(obj)
+//                    appDelegate.saveContext()
+//                }
+//            }
+//
+//            print(self.fetchedResultsController.fetchedObjects?.count as Any)
+//        }
+//    }
     
     
     fileprivate func setupFetchedResultsController() {
@@ -183,7 +180,6 @@ extension MealsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if connected {
             id = mealViewModels[indexPath.row].id
         } else {

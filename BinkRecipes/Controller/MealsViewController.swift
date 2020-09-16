@@ -25,6 +25,8 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
     var fetchedResultsController: NSFetchedResultsController<CoreDataRecipe>!
     var connected = true
     var recipeViewModel: RecipeViewModel!
+    let monitor = NWPathMonitor()
+    let queue = DispatchQueue(label: "Monitor")
 
     
     // MARK: - Life Cylce
@@ -35,6 +37,37 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
         let barButtonAttributes: [NSAttributedString.Key : Any] = [.font: UIFont(name: "Didot", size: 30) as Any]
         navigationController?.navigationBar.largeTitleTextAttributes = barButtonAttributes
         title = category
+        
+        self.setupFetchedResultsController()
+        
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                self.connected = true
+                
+                // If internet connection is re-established whilst viewing history - pop VC
+                if self.category == nil {
+                    DispatchQueue.main.async {
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
+                } else {
+                    self.fetchMealsFromMealsDB()
+                }
+                
+                //                deleteCoreDataObjects()
+                
+            } else {
+                // Fetch from Core Data
+                self.connected = false
+                DispatchQueue.main.async {
+                    self.mealViewModels = []
+                    self.category = nil
+                    self.title = "Viewing History"
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
+        monitor.start(queue: queue)
     }
     
 
@@ -44,48 +77,6 @@ class MealsViewController: UIViewController, NSFetchedResultsControllerDelegate 
         
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        self.setupFetchedResultsController()
-        print(fetchedResultsController.fetchedObjects?.count as Any)
-        
-        
-        let monitor = NWPathMonitor()
-        monitor.pathUpdateHandler = { path in
-            print("INSIDE")
-            if path.status == .satisfied {
-                print("connected meals VC")
-                
-                self.connected = true
-                
-                // If internet connection is re-established whilst viewing history - pop VC
-                if self.category == nil {
-                    print("SHould pop VC")
-                    DispatchQueue.main.async {
-                        self.navigationController?.popToRootViewController(animated: true)
-                    }
-                } else {
-                    self.fetchMealsFromMealsDB()
-                }
-                
-//                deleteCoreDataObjects()
-   
-            } else {
-                print("Disconnected meals VC")
-                
-                // Fetch from Core Data
-                self.connected = false
-                DispatchQueue.main.async {
-                    self.mealViewModels = []
-                    self.category = nil
-                    self.title = "Viewing History"
-                    self.tableView.reloadData()
-                    
-                }
-            }
-        }
-        
-        let queue = DispatchQueue(label: "Monitor")
-        monitor.start(queue: queue)
     }
     
     

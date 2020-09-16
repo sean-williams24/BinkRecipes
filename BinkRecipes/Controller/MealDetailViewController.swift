@@ -47,7 +47,7 @@ class MealDetailViewController: UIViewController {
             self.titleLabel.text = viewModel.title
             self.instructionsLabel.text = viewModel.instructions
             self.imageView.image = viewModel.image
-            self.youTubeView.load(withVideoId: viewModel.youTubeID)
+//            self.youTubeView.load(withVideoId: viewModel.youTubeID)
             self.categoryLabel.text = viewModel.category
             self.ingredientsLabel.text = viewModel.ingredients
             

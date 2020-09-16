@@ -35,18 +35,9 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
                 // Connected
-                print("Connected first VC")
                 self.itemsPerRow = 2.0
                 let services = Services()
                 services.fetchCategories { [weak self] categories, error in
@@ -63,8 +54,6 @@ class CategoriesViewController: UIViewController {
                 }
             } else {
                 // Disconnnected
-                print("Disconnected first VC")
-                
                 self.categoryViewModels = []
                 self.itemsPerRow = 1.0
                 
@@ -79,7 +68,13 @@ class CategoriesViewController: UIViewController {
         }
 
         monitor.start(queue: queue)
-
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     

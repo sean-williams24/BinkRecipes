@@ -1,6 +1,6 @@
 # BinkRecipes
 
-My attempt at creating a small app which displays recipes downloaded via the MealsDB API
+An app which displays recipes downloaded via the MealsDB API
 
 ## Pre-requisites   
 

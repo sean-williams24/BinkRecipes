@@ -50,7 +50,7 @@ class BinkRecipesTests: XCTestCase {
                             strInstructions: "",
                             strMealThumb: "",
                             strTags: "",
-                            strYouTube: "https://www.youtube.com/watch?v=4aZr5hZXP_s",
+                            strYoutube: "https://www.youtube.com/watch?v=4aZr5hZXP_s",
                             strIngredient1: "soy sauce",
                             strIngredient2: nil,
                             strIngredient3: "",
@@ -76,7 +76,7 @@ class BinkRecipesTests: XCTestCase {
         
         XCTAssertEqual(recipe.strMeal.uppercased(), viewModel.title)
         XCTAssertEqual(recipe.strArea + " / " + recipe.strCategory, viewModel.category)
-        XCTAssertEqual(String(recipe.strYouTube?.dropFirst(32) ?? ""), viewModel.youTubeID)
+        XCTAssertEqual(String(recipe.strYoutube?.dropFirst(32) ?? ""), viewModel.youTubeID)
         XCTAssertEqual(viewModel.youTubeID.count, 11)
         
         let instructions = recipe.strInstructions + "\n\nCheck out the tutorial video below..."

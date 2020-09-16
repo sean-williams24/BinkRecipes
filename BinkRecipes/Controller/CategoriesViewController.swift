@@ -34,6 +34,8 @@ class CategoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.backgroundColor = traitCollection.userInterfaceStyle == .dark ? UIColor.gray : UIColor.white
 
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
@@ -77,6 +79,11 @@ class CategoriesViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        collectionView.backgroundColor = traitCollection.userInterfaceStyle == .dark ? UIColor.gray : UIColor.white
+    }
     
     // MARK: - Navigation
     

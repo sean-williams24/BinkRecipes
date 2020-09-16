@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!-- - -->
+        <!--Categories View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CategoriesViewController" customModule="BinkRecipes" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,7 +90,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="-" id="ujG-SP-xfX"/>
+                    <navigationItem key="navigationItem" id="ujG-SP-xfX">
+                        <barButtonItem key="backBarButtonItem" title="-" id="iVT-7y-NLw"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Jyz-kn-uko" id="deN-SF-D7o"/>
                         <outlet property="titleHeightConstraint" destination="6CE-VA-1cb" id="cJL-Fc-ErB"/>

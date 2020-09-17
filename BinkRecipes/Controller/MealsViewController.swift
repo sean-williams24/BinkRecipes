@@ -41,27 +41,27 @@ class MealsViewController: UIViewController {
         
         self.setupFetchedResultsController()
         
-        monitor.pathUpdateHandler = { path in
+        monitor.pathUpdateHandler = { [weak self] path in
             if path.status == .satisfied {
-                self.connected = true
+                self?.connected = true
                 
                 // If internet connection is re-established whilst viewing history - pop VC
-                if self.category == nil {
+                if self?.category == nil {
                     DispatchQueue.main.async {
-                        self.navigationController?.popToRootViewController(animated: true)
+                        self?.navigationController?.popToRootViewController(animated: true)
                     }
                 } else {
-                    self.fetchMealsFromMealsDB()
+                    self?.fetchMealsFromMealsDB()
                 }
             } else {
                 // Fetch recipes from Core Data
-                self.connected = false
+                self?.connected = false
                 DispatchQueue.main.async {
-                    self.showAlert(title: "Oops", message: "Your Internet connection seems to be down. You can see your viewing history until your connection is re-established.")
-                    self.mealViewModels = []
-                    self.category = nil
-                    self.title = "Viewing History"
-                    self.tableView.reloadData()
+                    self?.showAlert(title: "Oops", message: "Your Internet connection seems to be down. You can see your viewing history until your connection is re-established.")
+                    self?.mealViewModels = []
+                    self?.category = nil
+                    self?.title = "Viewing History"
+                    self?.tableView.reloadData()
                 }
             }
         }

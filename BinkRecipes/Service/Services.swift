@@ -38,10 +38,8 @@ class Services {
                 completion([], error)
                 return
             }
-            
             let decoder = JSONDecoder()
             if let mealDB = try? decoder.decode(MealDB.self, from: data) {
-                
                 let categories = mealDB.categories.sorted {$0.strCategory < $1.strCategory}
                 
                 let categoryViewModels = categories.map({CategoryViewModel(category: $0)})

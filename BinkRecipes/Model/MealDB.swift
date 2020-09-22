@@ -48,6 +48,9 @@ struct Recipe: Codable {
     let strMealThumb: String
     let strTags: String?
     let strYoutube: String?
+    
+//    var ingredients: [String]?
+    
     let strIngredient1: String?
     let strIngredient2: String?
     let strIngredient3: String?

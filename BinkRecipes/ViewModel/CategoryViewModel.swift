@@ -8,7 +8,7 @@
 
 import Foundation
 import SDWebImage
-import UIKit
+//import UIKit
 
 struct CategoryViewModel {
     

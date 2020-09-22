@@ -113,7 +113,7 @@ extension CategoriesViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! CategoryCollectionViewCell
         let category = categoryViewModels[indexPath.row]
-        cell.viewModel = category
+        cell.configure(viewModel: category)
         
         return cell
     }

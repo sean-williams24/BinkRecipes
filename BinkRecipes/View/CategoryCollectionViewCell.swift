@@ -13,25 +13,23 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textLabel: UILabel!
-    
-    var viewModel: CategoryViewModel! {
-        didSet {
-            textLabel.attributedText = viewModel.title
-            imageView.contentMode = viewModel.contentMode
-            
-            if viewModel.title.string == "View Previously Viewed Recipes".uppercased() {
-                imageView.image = UIImage(named: "no.wifi")
-            } else {
-                imageView.sd_setImage(with: URL(string: viewModel.imageURLString), placeholderImage: UIImage(named: "bink"))
-            }
-        }
-    }
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 0.6
         layer.cornerRadius = 3
+    }
+    
+    func configure(viewModel: CategoryViewModel) {        
+        textLabel.attributedText = viewModel.title
+        imageView.contentMode = viewModel.contentMode
+        
+        if viewModel.title.string == "View Previously Viewed Recipes".uppercased() {
+            imageView.image = UIImage(named: "no.wifi")
+        } else {
+            imageView.sd_setImage(with: URL(string: viewModel.imageURLString), placeholderImage: UIImage(named: "bink"))
+        }
     }
 }
